@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    <h1>Home</h1>
+    <h2>Om mig</h2>
+    <p>
+        Mitt namn är Jesper och jag är 24 år gammal.
+        Jag kommer från en liten byhåla som heter Vagnhärad som ligger en bit utanför Nyköping där jag nu bor.
+        Jag bor tillsammans med min flickvän Sanna och våra två katter Gizmo och Elton.
+        Min fritid brukar gå åt att umgås med vänner och familj samt sitta en hel del vid datorn.
+        Jag läser denna utbildning för att jag i framtiden vill arbeta som fullstackutvecklare.
+        En sak jag hoppas att få göra i framtiden är att ta del av ett projekt jag anser är meningsfullt.
+    </p>
+    <a href="{{ asset('img/me.png') }}">
+        <img src="{{ asset('img/me.png') }}" alt="En gammal men fin bild på mig.">
+    </a>
+{% endblock %}

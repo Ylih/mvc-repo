@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Lucky{% endblock %}
+
+{% block body %}
+    <h1>Lucky</h1>
+    <h4>Your lucky number will be displayed along with an image.</h4>
+    <h3>Your lucky number: {{number}}</h3>
+    <a href="{{ asset(image) }}">
+        <img class="random-img" src="{{ asset(image) }}" alt="test image">
+    </a>
+{% endblock %}

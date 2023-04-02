@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="{{ asset('img/me.png') }}">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body style="background-image: url({{ asset('img/background.jpg') }})">
+        <header class="site-header">
+            <div class="header-container">
+                <div class="header-img-box">
+                    <img class="header-img" src="{{ asset('img/monkey.svg') }}" alt="En apa som kliar på huvudet.">
+                </div>
+                <h2 class="site-title">My Symfony Site</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ path('home') }}">Home</a></li>
+                    <li><a href="{{ path('about') }}">About</a></li>
+                    <li><a href="{{ path('report') }}">Report</a></li>
+                    <li><a href="{{ path('lucky') }}">Lucky</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main" style="background-image: url({{ asset('img/content-background.jpg') }})">
+            {% block body %}{% endblock %}
+        </main>
+        <footer>
+            <p>&copy; Jesper Yli-Hukka</p>
+            <a href="{{ path('credit') }}">Credit page</a>
+        </footer>
+    </body>
+</html>

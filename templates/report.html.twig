@@ -1,0 +1,107 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Report{% endblock %}
+
+{% block body %}
+<h1>Report</h1>
+<div class="two-col-layout-reverse">
+    <div class="two-col-pri">
+        <h2 id="kmom01">Kursmoment 01</h2>
+        <h3>Berätta kort om dina förkunskaper och tidigare erfarenheter kring objektorientering.</h3>
+        <p>
+            När det kommer till objektorientering så skulle jag vilja påstå att jag har en ganska god förståelse kring grunden.
+            Detta då jag precis läst kursen algoritmer och datastrukturer med objektorienterad Python (OOP). Kursen tog upp mycket kring objektorienterad programmering och vad det innebär.
+            Trotts att kurserna skiljer sig i val av programmeringsspråk så tänker jag att principen är den samma eller åtminstone liknande.
+            Utöver OOP så har jag inte några tidigare erfarenheter som är värda att nämna.
+        </p>
+
+        <h3>Berätta kort om PHPs modell för klasser och objekt. Vilka är de grunder man behöver veta/förstå för att kunna komma igång och skapa sina första klasser?</h3>
+        <p>
+            De grunder man behöver förstå sig på för att komma igång är: class, properties, methods och constructor.
+        </p>
+
+        <p>
+            För att definera en klass använder vi "class" exempelvis class Human. En klass är som en mall som man skapar sina objekt utifrån.
+            Men för att denna mall ska vara mer användbar så kan vi använda oss utav properties och methods.
+        </p>
+        <p>
+            En property i klassen Human kan till exempel vara $name som kommer att hålla människans namn eller kanske en $ssn för deras personnummer.
+            När vi väl har skapat objektet utifrån mallen så kan vi sätta värdena på $name och $ssn specifikt för den personen(objektet).
+            Detta gäller främst om vi inte har en constructor. Kortfattat så är en method en funktion som tillhör klassen.
+        </p>
+        <p>
+            Personligen så tänkte jag på __init__ i Python när jag såg constructor första gången. Har klassen en constructor så skapas objektet utifrån vad som står där i.
+            exempelvis så kan new Human() istället bli new Human("Pelle", "750910-1111"); som då kommer sätta $name till "Pelle" och $ssn till "750910-1111".
+        </p>
+
+        <h3>Reflektera kort över den kodbas, koden, strukturen som användes till uppgiften me/report, hur uppfattar du den?</h3>
+        <p>
+            Det känns som att det är en del att hålla kolla på med samtidigt upplever jag att var sak har sin plats.
+            Då allt är uppdelat så man får lov att hoppa emellan en del vilket jag märkt gör mig trött i huvudet i längden.
+            Jag har även valt att använda mig utav SASS då jag tyckte det var ett trevligt verktyg i design kursen.
+            Jag har även försökt strukturera upp CSS koden likt strukturen vi använda oss av i design kursen.
+        </p>
+
+        <h3>
+            Med tanke på artikeln “PHP The Right Way”, vilka delar in den finner du extra intressanta och värdefulla?
+            Är det några särskilda områden som du känner att du vill veta mer om? Lyft fram några delar av artikeln som du känner mer värdefulla.
+        </h3>
+        <p>
+            Den delen jag haft mest användning för hittills är "Coding Practices". Utöver det har jag mest bara skummat igenom artikeln.
+            Av det jag skummade igenom kände jag att artikeln hade en hel del att erbjuda så den fick hamna i min referensmapp i bokmärksfältet.
+            De delar jag tror att jag kommer nyfiket läsa vidare på är "Security" och "Databases".
+        </p>
+
+        <h3>Vilken är din TIL för detta kmom?</h3>
+        <p>
+            Symfony och dess delar är helt klart den stora lärdommen för veckan!
+            Det har även varit en vecka för att fräscha upp sina PHP kunskaper lite grann.
+        </p>
+
+        <h2 id="kmom02">Kursmoment 02</h2>
+        <h3>PH QUESTION</h3>
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, nihil!
+        </p>
+
+        <h2 id="kmom03">Kursmoment 03</h2>
+        <h3>PH QUESTION</h3>
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, nihil!
+        </p>
+
+        <h2 id="kmom04">Kursmoment 04</h2>
+        <h3>PH QUESTION</h3>
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, nihil!
+        </p>
+
+        <h2 id="kmom05">Kursmoment 05</h2>
+        <h3>PH QUESTION</h3>
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, nihil!
+        </p>
+
+        <h2 id="kmom06">Kursmoment 06</h2>
+        <h3>PH QUESTION</h3>
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, nihil!
+        </p>
+
+        <h2 id="kmom07">Kursmoment 07-10</h2>
+        <h3>PH QUESTION</h3>
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, nihil!
+        </p>
+    </div>
+    <div class="two-col-sec">
+        <a href="#kmom01">Kmom01</a>
+        <a href="#kmom02">Kmom02</a>
+        <a href="#kmom03">Kmom03</a>
+        <a href="#kmom04">Kmom04</a>
+        <a href="#kmom05">Kmom05</a>
+        <a href="#kmom06">Kmom06</a>
+        <a href="#kmom07">Kmom07</a>
+    </div>
+</div>
+{% endblock %}
