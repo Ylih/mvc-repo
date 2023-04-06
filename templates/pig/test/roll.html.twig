@@ -1,0 +1,17 @@
+{% block body %}
+<h1>Roll a dice</h1>
+
+<p>Here is the value of the dice.</p>
+
+<ul>
+    <li>{{ diceString }}</li>
+</ul>
+
+<p>Try to roll 
+    <a href="{{ path('test_roll_dices', {num: 5}) }}">5</a>
+    or 
+    <a href="{{ path('test_roll_dices', {num: 10}) }}">10</a>
+    dices.
+</p>
+
+{% endblock %}
