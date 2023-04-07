@@ -1,0 +1,226 @@
+.deck-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-container {
+    height: 135px;
+    width: 89px;
+
+    border: 1px solid #333;
+    border-radius: 0.5rem;
+
+    margin-bottom: $magic-number;
+}
+
+//Spades
+.ace-of-spades {
+    background-position: -8px -8px;
+}
+
+.two-of-spades {
+    background-position: -106px -8px;
+}
+
+.three-of-spades {
+    background-position: -204px -8px;
+}
+
+.four-of-spades {
+    background-position: -302px -8px;
+}
+
+.five-of-spades {
+    background-position: -400px -8px;
+}
+
+.six-of-spades {
+    background-position: -498px -8px;
+}
+
+.seven-of-spades {
+    background-position: -596px -8px;
+}
+
+.eight-of-spades {
+    background-position: -694px -8px;
+}
+
+.nine-of-spades {
+    background-position: -792px -8px;
+}
+
+.ten-of-spades {
+    background-position: -890px -8px;
+}
+
+.jack-of-spades {
+    background-position: -988px -8px;
+}
+
+.queen-of-spades {
+    background-position: -1086px -8px;
+}
+
+.king-of-spades {
+    background-position: -1184px -8px;
+}
+
+//Hearts
+.ace-of-hearts {
+    background-position: -8px -151px;
+}
+
+.two-of-hearts {
+    background-position: -106px -151px;
+}
+
+.three-of-hearts {
+    background-position: -204px -151px;
+}
+
+.four-of-hearts {
+    background-position: -302px -151px;
+}
+
+.five-of-hearts {
+    background-position: -400px -151px;
+}
+
+.six-of-hearts {
+    background-position: -498px -151px;
+}
+
+.seven-of-hearts {
+    background-position: -596px -151px;
+}
+
+.eight-of-hearts {
+    background-position: -694px -151px;
+}
+
+.nine-of-hearts {
+    background-position: -792px -151px;
+}
+
+.ten-of-hearts {
+    background-position: -890px -151px;
+}
+
+.jack-of-hearts {
+    background-position: -988px -151px;
+}
+
+.queen-of-hearts {
+    background-position: -1086px -151px;
+}
+
+.king-of-hearts {
+    background-position: -1184px -151px;
+}
+
+//Diamonds
+.ace-of-diamonds {
+    background-position: -8px -294px;
+}
+
+.two-of-diamonds {
+    background-position: -106px -294px;
+}
+
+.three-of-diamonds {
+    background-position: -204px -294px;
+}
+
+.four-of-diamonds {
+    background-position: -302px -294px;
+}
+
+.five-of-diamonds {
+    background-position: -400px -294px;
+}
+
+.six-of-diamonds {
+    background-position: -498px -294px;
+}
+
+.seven-of-diamonds {
+    background-position: -596px -294px;
+}
+
+.eight-of-diamonds {
+    background-position: -694px -294px;
+}
+
+.nine-of-diamonds {
+    background-position: -792px -294px;
+}
+
+.ten-of-diamonds {
+    background-position: -890px -294px;
+}
+
+.jack-of-diamonds {
+    background-position: -988px -294px;
+}
+
+.queen-of-diamonds {
+    background-position: -1086px -294px;
+}
+
+.king-of-diamonds {
+    background-position: -1184px -294px;
+}
+
+//Clubs
+.ace-of-clubs {
+    background-position: -8px -437px;
+}
+
+.two-of-clubs {
+    background-position: -106px -437px;
+}
+
+.three-of-clubs {
+    background-position: -204px -437px;
+}
+
+.four-of-clubs {
+    background-position: -302px -437px;
+}
+
+.five-of-clubs {
+    background-position: -400px -437px;
+}
+
+.six-of-clubs {
+    background-position: -498px -437px;
+}
+
+.seven-of-clubs {
+    background-position: -596px -437px;
+}
+
+.eight-of-clubs {
+    background-position: -694px -437px;
+}
+
+.nine-of-clubs {
+    background-position: -792px -437px;
+}
+
+.ten-of-clubs {
+    background-position: -890px -437px;
+}
+
+.jack-of-clubs {
+    background-position: -988px -437px;
+}
+
+.queen-of-clubs {
+    background-position: -1086px -437px;
+}
+
+.king-of-clubs {
+    background-position: -1184px -437px;
+}

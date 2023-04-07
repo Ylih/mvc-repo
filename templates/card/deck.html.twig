@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Card Game!{% endblock %}
+
+{% block body %}
+    <h1>Cards in deck</h1>
+    <div class="deck-container">
+    {% for card in cards %}
+        <div class="card-container {{card}}" style="background-image: url({{ asset('img/card_deck.png') }})"></div>
+    {% endfor %}
+    </div>
+{% endblock %}
