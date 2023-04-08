@@ -6,7 +6,7 @@ class CardHand
 {
     private $hand = [];
 
-    public function add($card): void
+    public function add(Card $card): void
     {
         $this->hand[] = $card;
     }
@@ -18,7 +18,7 @@ class CardHand
         return $this->hand;
     }
 
-    public function countCards(): array
+    public function countCards(): int
     {
         return count($this->hand);
     }

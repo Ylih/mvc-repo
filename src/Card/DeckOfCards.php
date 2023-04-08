@@ -39,7 +39,7 @@ class DeckOfCards
         shuffle($this->deck);
     }
 
-    public function draw()
+    public function draw(): Card
     {
         $card = array_pop($this->deck);
         return $card;

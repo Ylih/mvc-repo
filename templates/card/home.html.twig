@@ -4,13 +4,38 @@
 
 {% block body %}
     <h1>Card Game!</h1>
-    <h3>Rules</h3>
+    <h3>Card</h3>
     <p>
-        På din landdningssida, berätta kort om strukturen på dina klasser, vilka klasser har du och hur är de relaterade till varandra.
-        Rita ett UML klass diagram och visa i sidan.
+        Card klassen har en constructor som tar type, name och value.
+        Type är en string som visar kortens sort ("Hearts", "Spades", "Clubs", "Diamonds"),
+        name är benämningen på kortet exempelvis "ace" och value är en int som symboliserar värdet på kortet.
+        Card klassen har totalt fem metoder. Tre av dem är för att hämta en specifik property exempelvis getType().
+        getAsString metoden hämtar namnet på kortet och getAsArray hämtar alla värdena från objektet och lägger dem i en associativ array.
     </p>
-    <ul>
-        <li><a href="{{ path('card_deck')}}">THE DECK</a></li>
-        <li><a href="{{ path('deck_shuffle')}}">SHUFFLE DECK</a></li>
-    </ul>
+
+    <h3>CardHand</h3>
+    <p>
+        CardHand klassen har en privat array och metoder för att lägga till kort i arrayen, hämta vad som finns i arrayen och räkna arrayen.
+        Klassen har även två metoder för att hämta ut namnet på varje kort och värdena från varje kort.
+        Det är den metod som hämtar ut namnet på varje kort som används för att visa upp kortet med css (class="ace-of-spades").
+    </p>
+
+    <h3>DeckOfCards</h3>
+    <p>
+        DeckOfCards klassens constructor skapar en kortlek med 52 Card objekt. 13 av varje sort ("Hearts", "Spades", "Clubs", "Diamonds").
+        Den gör detta genom nestlade for-loopar. den yttre loopen loopar igenom sorterna och den inre går 1-13 (Ess till Kung).
+        I den inre loopen skapas Card objekten och läggs in i en array. Klassen har en metod för att blanda kortleken och en för att hämta ut ett kort ur kortleken.
+        Likt ClardHand har klassen ytterligare två metoder för att hämta ut namnet på varje kort och värdena från varje kort.
+    </p>
+
+    <a href="{{ asset('img/CardUML.png') }}">
+        <img class="quarter-width" src="{{ asset('img/CardUML.png') }}" alt="Ett UML diagram på klasserna ovan.">
+    </a>
+
+    <p>Kardinaliteten mellan CardHand och DeckOfCards hade sett annorlunda ut vid implementering av flera spelare.</p>
+
+    <a class="button" href="{{ path('card_deck')}}">Deck</a>
+    <a class="button" href="{{ path('deck_shuffle')}}">Shuffle</a>
+    <a class="button" href="{{ path('deck_draw')}}">Draw</a>
+    <a class="button" href="{{ path('deck_draw_many', {number: 10})}}">Draw 10</a>
 {% endblock %}
