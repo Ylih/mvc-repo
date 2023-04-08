@@ -2,10 +2,6 @@
 
 namespace App\Card;
 
-use App\Card\DeckOfCards;
-
-// Detta är player klassen. I denna instansierar jag en kortlek åt spelaren och en giv. CardHand blir då ägaren av DeckOfCards som i sin tur äger Card.
-
 class CardHand
 {
     private $hand = [];
@@ -32,6 +28,15 @@ class CardHand
         $values = [];
         foreach ($this->hand as $card) {
             $values[] = $card->getAsString();
+        }
+        return $values;
+    }
+
+    public function getArray(): array
+    {
+        $values = [];
+        foreach ($this->hand as $card) {
+            $values[] = $card->getAsArray();
         }
         return $values;
     }

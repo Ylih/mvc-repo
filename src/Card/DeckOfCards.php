@@ -34,8 +34,15 @@ class DeckOfCards
         }
     }
 
-    public function shuffle() {
+    public function shuffle()
+    {
         shuffle($this->deck);
+    }
+
+    public function draw()
+    {
+        $card = array_pop($this->deck);
+        return $card;
     }
 
     public function getNumberCards(): int
@@ -48,6 +55,15 @@ class DeckOfCards
         $values = [];
         foreach ($this->deck as $card) {
             $values[] = $card->getAsString();
+        }
+        return $values;
+    }
+
+    public function getArray(): array
+    {
+        $values = [];
+        foreach ($this->deck as $card) {
+            $values[] = $card->getAsArray();
         }
         return $values;
     }

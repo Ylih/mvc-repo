@@ -20,7 +20,7 @@ class Card
         return $this->type;
     }
 
-    public function getName(): int
+    public function getName(): string
     {
         return $this->name;
     }
@@ -33,5 +33,14 @@ class Card
     public function getAsString(): string
     {
         return "{$this->name}-of-{$this->type}";
+    }
+
+    public function getAsArray(): array
+    {
+        return [
+            "type" => $this->getType(),
+            "name" => $this->getName(),
+            "value" => $this->getValue(),
+        ];
     }
 }
