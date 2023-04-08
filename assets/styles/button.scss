@@ -1,0 +1,45 @@
+.button {
+    font-size: $base-font-size;
+    font-family: $header-font;
+    font-weight: 600;
+    margin-bottom: $magic-number;
+
+    background-color: $header-color;
+    background-image: linear-gradient(to bottom, $header-color, $text-color);
+    color: $background-color;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    text-align: center;
+    border: 1px solid darken($header-color, 10%);
+    border-radius: 0.1rem;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+}
+
+.button:hover {
+    color: red;
+    background-image: linear-gradient(to bottom, $text-color, $header-color);
+    cursor: pointer;
+}
+
+.button:active {
+    box-shadow: none;
+    transform: translateY(1px);
+}
+
+.block {
+    display: block;
+}
+
+.button-appearance {
+    font-size: $base-font-size;
+    font-family: $header-font;
+    font-weight: 600;
+    margin-bottom: $magic-number;
+
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    text-align: center;
+    border: 1px solid darken($header-color, 10%);
+    border-radius: 0.1rem;
+}
