@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class QuoteControllerJson
 {
-    #[Route("/api/quote")]
+    #[Route("/api/quote", name: "api_quote")]
     public function jsonQuote(): Response
     {
         date_default_timezone_set('Europe/Stockholm');

@@ -32,6 +32,12 @@ class ReportControllerTwig extends AbstractController
         return $this->render('credit.html.twig');
     }
 
+    #[Route("/api", name: "api")]
+    public function api(): Response
+    {
+        return $this->render('api.html.twig');
+    }
+
     #[Route("/lucky", name: "lucky")]
     public function number(): Response
     {

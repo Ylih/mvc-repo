@@ -3,10 +3,8 @@
 namespace App\Controller;
 
 use App\Card\Card;
-use App\Card\CardGraphic;
 use App\Card\CardHand;
 use App\Card\DeckOfCards;
-
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,11 +12,17 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
-class DiceGameController extends AbstractController
+class CardGameController extends AbstractController
 {
     #[Route("/card", name: "card_start")]
-    public function home(): Response
+    public function home(SessionInterface $session): Response
     {
+        $deck = new DeckOfCards();
+
+        $deck->shuffle();
+
+        $session->set("deck", $deck);
+
         return $this->render('card/home.html.twig');
     }
 
@@ -35,9 +39,11 @@ class DiceGameController extends AbstractController
     }
 
     #[Route("/card/deck/shuffle", name: "deck_shuffle")]
-    public function cardShuffle(): Response {
+    public function cardShuffle(SessionInterface $session): Response
+    {
         $deck = new DeckOfCards();
         $deck->shuffle();
+        $session->set("deck", $deck);
 
         $data = [
             "cards" => $deck->getString(),
@@ -46,18 +52,51 @@ class DiceGameController extends AbstractController
         return $this->render('card/deck.html.twig', $data);
     }
 
-    #[Route("/card/deck/draw", name: "deck_draw", methods: ['GET'])]
-    public function cardDraw(): Response
+    #[Route("/card/deck/draw", name: "deck_draw")]
+    public function cardDraw(SessionInterface $session): Response
     {
-        //Dra ett kort ur kortleken och visa upp det. Visa även hur många kort det är kvar i kortleken.
-        return $this->render('pig/play.html.twig', $data);
+        if ($session->get("deck")->getNumberCards() <= 0) {
+            throw new \Exception("Can't draw more cards than the deck currently contains.");
+        }
+
+        $deck = $session->get("deck");
+        $hand = new CardHand();
+
+        $card = $deck->draw();
+
+        $hand->add($card);
+
+        $data = [
+            "cards" => $hand->getString(),
+            "cardsLeft" => $deck->getNumberCards(),
+        ];
+
+        return $this->render('card/draw.html.twig', $data);
     }
 
-    #[Route("/card/deck/draw/{number<\d+>}", name: "deck_draw_many", methods: ['POST'])]
-    public function roll(int $number): Response
+    #[Route("/card/deck/draw/{number<\d+>}", name: "deck_draw_many")]
+    public function cardDrawMany(SessionInterface $session, int $number): Response
     {
-        //Dra X kort ur kortleken och visa upp dem. Visa även hur många kort det är kvar i kortleken.
-        //Throw exception "kan inte dra mer kort än kortleken."
-        return $this->redirectToRoute('pig_play');
+
+        if ($number > 52) {
+            throw new \Exception("Can't draw more cards than the deck contains.");
+        } elseif ($number > $session->get("deck")->getNumberCards()) {
+            throw new \Exception("Can't draw more cards than the deck currently contains.");
+        }
+
+        $deck = $session->get("deck");
+        $hand = new CardHand();
+
+        for ($i = 1; $i <= $number; $i++) {
+            $card = $deck->draw();
+            $hand->add($card);
+        }
+
+        $data = [
+            "cards" => $hand->getString(),
+            "cardsLeft" => $deck->getNumberCards(),
+        ];
+
+        return $this->render('card/draw.html.twig', $data);
     }
 }
