@@ -6,7 +6,7 @@
     <h1>Cards in deck</h1>
     <div class="deck-container">
     {% for card in cards %}
-        <div class="card-container {{card}}" style="background-image: url({{ asset('img/card_deck.png') }})"></div>
+        <div class="{{card}}"></div>
     {% endfor %}
     </div>
 {% endblock %}

@@ -33,6 +33,7 @@ class CardGameController extends AbstractController
 
         $data = [
             "cards" => $deck->getString(),
+            "lowRes" => $deck->getLowRes(),
         ];
 
         return $this->render('card/deck.html.twig', $data);
