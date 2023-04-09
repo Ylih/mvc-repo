@@ -7,7 +7,7 @@
     <h3>Cards Left: {{cardsLeft}}</h3>
     <div class="deck-container">
     {% for card in cards %}
-        <div class="card-container {{card}}" style="background-image: url({{ asset('img/card_deck.png') }})"></div>
+        <div class="{{card}}" style="background-image: url({{ asset('img/card_deck.png') }})"><h3>{{lowRes[loop.index - 1]}}</h3><h3>{{lowRes[loop.index - 1]}}</h3></div>
     {% endfor %}
     </div>
 {% endblock %}

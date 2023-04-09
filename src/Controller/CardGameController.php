@@ -29,7 +29,7 @@ class CardGameController extends AbstractController
     #[Route("/card/deck", name: "card_deck")]
     public function cardDeck(): Response
     {
-        $deck = new DeckOfCards();
+        $deck = new DeckOfCards("basic");
 
         $data = [
             "cards" => $deck->getString(),
@@ -48,6 +48,7 @@ class CardGameController extends AbstractController
 
         $data = [
             "cards" => $deck->getString(),
+            "lowRes" => $deck->getLowRes(),
         ];
 
         return $this->render('card/deck.html.twig', $data);
@@ -69,6 +70,7 @@ class CardGameController extends AbstractController
 
         $data = [
             "cards" => $hand->getString(),
+            "lowRes" => $hand->getLowRes(),
             "cardsLeft" => $deck->getNumberCards(),
         ];
 
@@ -95,6 +97,7 @@ class CardGameController extends AbstractController
 
         $data = [
             "cards" => $hand->getString(),
+            "lowRes" => $hand->getLowRes(),
             "cardsLeft" => $deck->getNumberCards(),
         ];
 

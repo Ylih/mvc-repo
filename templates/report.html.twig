@@ -60,24 +60,64 @@
 
         <h2 id="kmom02">Kursmoment 02</h2>
         <h3>Förklara kort de objektorienterade konstruktionerna arv, komposition, interface och trait och hur de används i PHP.</h3>
+
+        <h4>Arv</h4>
         <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, nihil!
+            En klass ärver från en annan. I mitt exempel är det CardGraphic som ärver av Card. CardGraphic har tillgång till Cards metoder och kan ändra på dessa metoder
+            för att göra klassen mer specifik. I mitt fall så ändras metoderna för att hämta class namn till css och den visuella represenationen (strängen "A♥" blir en tom sträng).
+        </p>
+
+        <h4>Komposition</h4>
+        <p>
+            Väldigt kortfattat är det ett objekt som existerar på grund av ett annat. I mitt fall så existerar inte Card/CardGraphic utan en DeckOfCards.
+            DeckOfCards blir då det äger då korten och om kortleken försvinner så existerar inte korten.
+        </p>
+
+        <h4>Interface</h4>
+        <p>
+            Som jag tolkat interface så är det ett typ av kontrakt som säger något i stil med "dessa metoder måste du implementera för att upprätthålla denna interface".
+            Det jag tänker tillbaka till i min kod är Card och CardGraphic. Visserligen ärver CardGraphic metoderna från Card men ändrar på två av dem men de har fortfarande samma namn
+            vilket gör att de båda körs i controllern men gör olika saker.
+        </p>
+        <h4>Trait</h4>
+        <p>
+            Trait är som en modul med metoder för klasser. Ett exempel jag hittat i min egen kod är CardHand och DeckOfCards som båda delar 3 metoder (getString, getLowRes, getArray).
+            Dessa tre hade jag kunnat gjort en trait av och sedan använt mig av traiten i klasserna istället.
         </p>
 
         <h3>Berätta om din implementation från uppgiften. Hur löste du uppgiften, är du nöjd/missnöjd, vilken förbättringspotential ser du i din koden och dina klasser?</h3>
         <p>
-            Jag valde att implementera tre klasser utifrån förslaget vi fick.
-            Jag funderade på att skapa en GraphicCard också men valde att inte göra det då jag kände att Card klassen var nog för att lösa uppgiften.
+            Jag valde att implementera fyra klasser utifrån förslaget vi fick.
+            Den sista klassen CardGraphic blev lite av en efterkonstruktion då jag missade kravet av att ha minst ett arv och minst en komposition.
+            Detta eftersom kravet inte var tydligt placerat i punktform bland de andra kraven. Jag är otroligt missnöjd över min lösning av uppgiften.
+            Jag lyckas inte få till path i SASS med npm run build så jag måste ha style background-image i min html kod vilket krockar en del med stylingen.
+            Jag har lyckats hitta lite "workarounds" men skulle vilja påstå att det är på bekostnad av kodkvalitet.
+        </p>
+
+        <h4>Förbättringspotential</h4>
+        <p>
+            Well... håll i er! Jag skapar alltid två h3 element i mina divar för korten oavsett om de skrivs något i dem eller ej. Jag har en metod som returnerar en tom sträng.
+            Dåligt namngivna metoder getAsString borde till exempel heta getClassNames eller något i den stilen istället.
+            Jag behöver använda en !important för att ta bort background-imagen som alltid genereras på divarna.
+            Det finns säkert mycket mer att nämna men det var det jag kom på som hastigast.
+        </p>
+
+        <p>
+            Med tanke på hur otroligt massivt detta kursmoment var så är jag ändå stolt över att jag hunnit klart i tid.
         </p>
 
         <h3>Berätta hur det kändes att modellera ett kortspel med flödesdiagram och psuedokod. Var det något som du tror stödjer dig i din problemlösning och tankearbete för att strukturera koden kring en applikation?</h3>
         <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, nihil!
+            Jag satt faktiskt med en vanlig kortlek när jag höll på med denna uppgift. Det underlättade väldigt mycket medan jag arbetade med mitt UML diagram.
+            Jag började tänka kring vad för värden ett kort kan tänkas ha. Jag gjorde samma sak med kortleken och min hand och konstaterade att dessa är typer av arrayer.
+            En kortlek är en stack och handen är bara en tom array man kan lägga till kort i.
         </p>
 
         <h3>Vilken är din TIL för detta kmom?</h3>
         <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, nihil!
+            Interface och Trait även lärt mig mer om programmering inom PHP.
+            En sak jag upptäckte som jag tyckte var lite cool var att man kan göra redirect på routes med en status kod för att skicka vidare som exempelvis POST (307).
+            Jag valde att skippa de optionella kraven då detta kursmoment redan var stort nog utan dem.
         </p>
 
         <h2 id="kmom03">Kursmoment 03</h2>

@@ -35,7 +35,7 @@ class DeckOfCards
                     $this->deck[] = new CardGraphic($type, $cardName[$i-1], $i);
                 }
             }
-        } else if ($cardClass === "basic") {
+        } elseif ($cardClass === "basic") {
             foreach ($cardType as $type) {
                 for ($i = 1; $i <= 13; $i++) {
                     $this->deck[] = new Card($type, $cardName[$i-1], $i);
@@ -45,7 +45,7 @@ class DeckOfCards
             throw new \Exception("That type of card does not exist.");
         }
 
-        
+
     }
 
     public function shuffle()

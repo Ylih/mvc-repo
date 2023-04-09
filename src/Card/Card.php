@@ -32,7 +32,7 @@ class Card
 
     public function getAsString(): string
     {
-        return "{$this->name} of {$this->type}";
+        return "alt-container {$this->name}-{$this->type}";
     }
 
     public function getAsLowRes(): string
@@ -58,7 +58,7 @@ class Card
             12 => "Q",
             13 => "K",
         ];
-        return "[{$letter[$this->getValue()]}{$types[$this->getType()]}]";
+        return "{$letter[$this->getValue()]}{$types[$this->getType()]}";
     }
 
     public function getAsArray(): array

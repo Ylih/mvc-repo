@@ -23,6 +23,19 @@
     border-radius: 0.5rem;
 
     margin-bottom: $magic-number;
+    background-image: none !important; //removes background
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h3 {
+        margin-bottom: 0;
+    }
+}
+
+.alt-container h3:first-child {
+    align-self: flex-end;
 }
 
 //Spades

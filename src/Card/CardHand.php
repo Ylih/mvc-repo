@@ -40,4 +40,13 @@ class CardHand
         }
         return $values;
     }
+
+    public function getLowRes(): array
+    {
+        $values = [];
+        foreach ($this->hand as $card) {
+            $values[] = $card->getAsLowRes();
+        }
+        return $values;
+    }
 }

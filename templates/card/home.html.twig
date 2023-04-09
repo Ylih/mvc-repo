@@ -13,19 +13,29 @@
         getAsString metoden hämtar namnet på kortet och getAsArray hämtar alla värdena från objektet och lägger dem i en associativ array.
     </p>
 
+    <h3>CardGraphic</h3>
+    <p>
+        CardGraphic klassen "extendar" Card klassen. Den ändrar på metoderna getAsString och getAsLowRes.
+        getAsString skickar med en annan contaier för CSSen och getAsLowRes returnar en tom sträng. getAsLowRes används för att visualisera värdet när en bild inte finns med och i fallet av CardGraphic så finns bild med därav tom sträng.
+        Denna klass blev lite av en efterkonstruktion och hamnade inte med på UML diagrammet. Då jag missade kravet av att ha med en "extends".
+    </p>
+
     <h3>CardHand</h3>
     <p>
         CardHand klassen har en privat array och metoder för att lägga till kort i arrayen, hämta vad som finns i arrayen och räkna arrayen.
         Klassen har även två metoder för att hämta ut namnet på varje kort och värdena från varje kort.
-        Det är den metod som hämtar ut namnet på varje kort som används för att visa upp kortet med css (class="ace-of-spades").
+        Det är den metod som hämtar ut namnet på css klasserna som används för att visa upp kortet med css (class="card-container ace-of-spades").
     </p>
 
     <h3>DeckOfCards</h3>
     <p>
-        DeckOfCards klassens constructor skapar en kortlek med 52 Card objekt. 13 av varje sort ("Hearts", "Spades", "Clubs", "Diamonds").
+        DeckOfCards klassens constructor skapar en kortlek med 52 Card objekt.
+        Man kan även välja att skriva in "basic" i konstruktorn för att skapa kort från Card klassen.
+        Skriver man inte in något eller "graphic" så skapas korten utifrån CardGraphic som extendar Card.
+        Det är 13 av varje sort ("Hearts", "Spades", "Clubs", "Diamonds").
         Den gör detta genom nestlade for-loopar. den yttre loopen loopar igenom sorterna och den inre går 1-13 (Ess till Kung).
         I den inre loopen skapas Card objekten och läggs in i en array. Klassen har en metod för att blanda kortleken och en för att hämta ut ett kort ur kortleken.
-        Likt ClardHand har klassen ytterligare två metoder för att hämta ut namnet på varje kort och värdena från varje kort.
+        Likt CardHand har klassen ytterligare två metoder för att hämta ut css klasserna till varje kort och värdena från varje kort.
     </p>
 
     <a href="{{ asset('img/CardUML.png') }}">

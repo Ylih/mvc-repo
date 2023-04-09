@@ -64,6 +64,7 @@ class DeckControllerJson extends AbstractController
         $card = $deck->draw();
 
         $data = [
+            "cardsLeft" => $deck->getNumberCards(),
             'card' => $card->getAsArray(),
         ];
 
