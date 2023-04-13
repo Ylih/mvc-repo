@@ -12,7 +12,7 @@
 
     margin-bottom: $magic-number;
 
-    background-image: url("../../public/img/card_deck.png");
+    background-image: url("../img/card_deck.png");
 }
 
 .alt-container {
@@ -23,7 +23,6 @@
     border-radius: 0.5rem;
 
     margin-bottom: $magic-number;
-    background-image: none !important; //removes background
 
     display: flex;
     flex-direction: column;

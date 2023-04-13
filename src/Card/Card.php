@@ -4,11 +4,11 @@ namespace App\Card;
 
 class Card
 {
-    protected $value;
-    protected $name;
-    protected $type;
+    protected int $value;
+    protected string $name;
+    protected string $type;
 
-    public function __construct($type, $name, $value)
+    public function __construct(string $type, string $name, int $value)
     {
         $this->type = $type;
         $this->name = $name;
@@ -17,17 +17,17 @@ class Card
 
     public function getType(): string
     {
-        return $this->type;
+        return (string) $this->type;
     }
 
     public function getName(): string
     {
-        return $this->name;
+        return (string) $this->name;
     }
 
     public function getValue(): int
     {
-        return $this->value;
+        return (int) $this->value;
     }
 
     public function getAsString(): string
@@ -61,6 +61,9 @@ class Card
         return "{$letter[$this->getValue()]}{$types[$this->getType()]}";
     }
 
+    /**
+     * @return array{ "type": string, "name": string, "value": int }
+     */
     public function getAsArray(): array
     {
         return [

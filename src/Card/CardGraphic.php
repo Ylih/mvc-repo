@@ -4,7 +4,7 @@ namespace App\Card;
 
 class CardGraphic extends Card
 {
-    public function __construct($type, $name, $value)
+    public function __construct(string $type, string $name, int $value)
     {
         parent::__construct($type, $name, $value);
     }

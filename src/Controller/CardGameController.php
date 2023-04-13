@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Card\Card;
 use App\Card\CardHand;
 use App\Card\DeckOfCards;
+use Exception;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -57,11 +58,13 @@ class CardGameController extends AbstractController
     #[Route("/card/deck/draw", name: "deck_draw")]
     public function cardDraw(SessionInterface $session): Response
     {
-        if ($session->get("deck")->getNumberCards() <= 0) {
-            throw new \Exception("Can't draw more cards than the deck currently contains.");
+        /** @var \App\Card\DeckOfCards $deck */
+        $deck = $session->get("deck");
+
+        if ($deck->getNumberCards() <= 0) {
+            throw new Exception("Can't draw more cards than the deck currently contains.");
         }
 
-        $deck = $session->get("deck");
         $hand = new CardHand();
 
         $card = $deck->draw();
@@ -81,13 +84,15 @@ class CardGameController extends AbstractController
     public function cardDrawMany(SessionInterface $session, int $number): Response
     {
 
+        /** @var \App\Card\DeckOfCards $deck */
+        $deck = $session->get("deck");
+
         if ($number > 52) {
-            throw new \Exception("Can't draw more cards than the deck contains.");
-        } elseif ($number > $session->get("deck")->getNumberCards()) {
-            throw new \Exception("Can't draw more cards than the deck currently contains.");
+            throw new Exception("Can't draw more cards than the deck contains.");
+        } elseif ($number > $deck->getNumberCards()) {
+            throw new Exception("Can't draw more cards than the deck currently contains.");
         }
 
-        $deck = $session->get("deck");
         $hand = new CardHand();
 
         for ($i = 1; $i <= $number; $i++) {
