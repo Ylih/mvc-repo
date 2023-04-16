@@ -1,0 +1,53 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Game Documentation{% endblock %}
+
+{% block body %}
+    <h1>Documentation</h1>
+    <h3>Tankar</h3>
+    <p>
+        Jag funderar på att skapa en game klass som sköter logiken bakom spelet. Tanken är att den håller bankens hand och spelarens hand.
+        Klassen ska ha metoder för att: hämta summan av en hand, kolla om spelet är slut (har någon av händerna över 21?), kolla om en hand innehåller ett ess.
+        Är spelet slut men en hand innehåller ett ess så sätts värdet på esset till 1 och sedan kollar man om spelet är slut igen(fortfarande över 21 trots bytet från 14 till 1).
+        Jag tror även att jag kommer modifiera DeckOfCards klassen och lägga till en metod för att dra kort fram tills värdet av de dragna korten är 17 eller mer.
+        Då min kod fungerar så att kortleken drar korten och inte handen så kommer jag nog även behöva bygga ut CardHand med en metod för att loopa igenom en array av kort och lägga till dem.
+        Det gör att jag inte behöver lägga loopen i controllern sen.
+    </p>
+    <h3>Klasserna</h3>
+    <p>
+        <b>CardGraphic</b> - Det viktiga med kortet i detta fall är värdet då vi måste veta värdet som handen innehåller.
+        Jag väljer att arbeta vidare med CardGraphic då det kommer se trevligare ut visuellt när jag är klar. 
+    </p>
+    <p>
+        <b>CardHand</b> - En hand håller korten som dras från kortleken. Vi behöver denna klass för att visa upp spelarens värde.
+    </p>
+    <p>
+        <b>DeckOfCards</b> - Innehåller de 52 kort vi skall använda oss av. Vi behöver en kortlek för att kunna spela ett kortspel.
+    </p>
+    <p>
+        <b>Game</b> - Tänkt att ansvara för logiken bakom spelet. 
+    </p>
+    <h3>Pseudokod</h3>
+    <p>
+        När spelaren trycker på start game postas det till en route som initierar spelet och sedan redirectar till spelrouten.
+        Spelrouten ansvarar för att kolla om spelet är över.
+    </p>
+    <h4>
+        button -> init -> view.
+    </h4>
+    <p>
+        Spelaren kan trycka på två knappar, Draw och Stay.
+    </p>
+    <h4>Draw -> add card to hand route(process) -> See if player got over 21 points(process) -> IF TRUE game over -> view</h4>
+    <h4>Stay -> add card to bank route(process) -> See if bank got over 21 points(process) -> IF TRUE player won -> IF False get winner(process) -> view</h4>
+    <p>
+        För dokumentationens skull tänkte jag visa upp hur jag brukar skriva medan jag arbetar för att underlätta mitt tänkande.
+    </p>
+    <a href="{{ asset('img/minprocess.png') }}">
+        <img class="quarter-width" src="{{ asset('img/minprocess.png') }}" alt="En flowchart för spelet.">
+    </a>
+    <h3>Flowchart</h3>
+    <a href="{{ asset('img/TwentyOneFlowchart.png') }}">
+        <img class="quarter-width" src="{{ asset('img/TwentyOneFlowchart.png') }}" alt="En flowchart för spelet.">
+    </a>
+{% endblock %}

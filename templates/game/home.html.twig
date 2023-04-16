@@ -1,0 +1,24 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Start Game{% endblock %}
+
+{% block body %}
+    <h1>Card Game: Twenty-One</h1>
+
+    <h2>Rules</h2>
+    <p>
+        The goal in this game is to reach 21 points. The player can choose to draw more cards after the initial card or stay.
+        When the player decides to stay the bank plays its turn. If the players score exceeds 21 points, they automatically lose.
+    </p>
+
+    <h3>Points</h3>
+    <p>
+        Aces can be worth either 1 or 14, kings are worth 13, Queens are worth 12, Jacks are worth 11. The remaining cards are worth their respective numbers.
+    </p>
+
+    <form method="post" action="{{ path('game_init')}}">
+        <input class="button" type="submit" name="do_it" value="START">
+    </form>
+
+    <a class="block" href="{{ path('game_doc')}}">Documentation</a>
+{% endblock %}

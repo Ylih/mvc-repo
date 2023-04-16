@@ -1,0 +1,50 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Card Game: Twenty-One{% endblock %}
+
+{% block body %}
+<h2>Cards in deck: {{cardsLeft}}</h2>
+
+{% if not game %}
+    <form method="post" action="">
+        <input class="button" disabled="disabled" type="submit" name="draw" value="Draw" onClick="this.form.action='{{ path('game_draw') }}';">
+        <input class="button" disabled="disabled" type="submit" name="stay" value="Stay" onClick="this.form.action='{{ path('game_stay') }}';">
+        <input class="button" type="submit" name="reset" value="Reset" onClick="this.form.action='{{ path('game_init') }}';">
+    </form>
+
+    <h2>Bank hand: {{bank_sum}}</h2>
+    <div class="deck-container">
+        {% for card in bank_hand %}
+        <div class="{{card}}"></div>
+        {% endfor %}
+    </div>
+
+    <h2>Player hand: {{player_sum}}</h2>
+    <div class="deck-container">
+        {% for card in player_hand %}
+        <div class="{{card}}"></div>
+        {% endfor %}
+    </div>
+{% else %}
+    <form method="post" action="">
+        <input class="button" type="submit" name="draw" value="Draw" onClick="this.form.action='{{ path('game_draw') }}';">
+        <input class="button" type="submit" name="stay" value="Stay" onClick="this.form.action='{{ path('game_stay') }}';">
+        <input class="button" type="submit" name="reset" value="Reset" onClick="this.form.action='{{ path('game_init') }}';">
+    </form>
+
+    <h2>Bank hand: {{bank_sum}}</h2>
+    <div class="deck-container">
+        {% for card in bank_hand %}
+        <div class="{{card}}"></div>
+        {% endfor %}
+    </div>
+
+    <h2>Player hand: {{player_sum}}</h2>
+    <div class="deck-container">
+        {% for card in player_hand %}
+        <div class="{{card}}"></div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% endblock %}
