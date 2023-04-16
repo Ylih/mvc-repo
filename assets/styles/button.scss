@@ -27,6 +27,19 @@
     transform: translateY(1px);
 }
 
+.button:disabled {
+    background-color: dimgray;
+    background-image: none;
+    color: linen;
+    opacity: 1;
+}
+
+.button:disabled:hover {
+    background-color: dimgray;
+    color:linen;
+    background-image: none;
+}
+
 .block {
     display: block;
 }
