@@ -26,12 +26,17 @@ body main {
     border: 1px solid #333;
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3);
 
+    background-image: url('../img/content-background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 blockquote {
     margin: 0 1.5rem $magic-number 1.5rem;
+}
+
+.half-width {
+    width: 50%;
 }
 
 .quarter-width {
