@@ -30,6 +30,11 @@ class Card
         return (int) $this->value;
     }
 
+    public function setValue(int $value): void
+    {
+        $this->value = $value;
+    }
+
     public function getAsString(): string
     {
         return "alt-container {$this->name}-{$this->type}";
@@ -57,6 +62,7 @@ class Card
             11 => "J",
             12 => "Q",
             13 => "K",
+            14 => "A",
         ];
         return "{$letter[$this->getValue()]}{$types[$this->getType()]}";
     }

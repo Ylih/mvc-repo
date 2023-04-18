@@ -31,4 +31,10 @@
         </form>
         <p> - Enter the amount of cards you would like to draw.</p>
     </div>
+    <div class="json-deck-box">
+        <form method="post" action="{{ path('api_twenty_one_game')}}">
+            <input class="button" type="submit" name="do_it" value="Game">
+        </form>
+        <p> - View the current active game.</p>
+    </div>
 {% endblock %}

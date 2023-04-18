@@ -24,11 +24,26 @@ body main {
     margin-bottom: $magic-number * 2;
 
     border: 1px solid #333;
-    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3), inset 1px 1px 25px rgba(0, 0, 0, 0.2);
+    background: radial-gradient(ellipse farthest-corner at center,#f8e1b0
+    ,#bd9b75);
+}
 
-    background-image: url('../img/content-background.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+.gameboard {
+    width: 60rem;
+    height: 40rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h2 {
+        margin-bottom: 0;
+    }
+
+    form {
+        align-self: center;
+    }
 }
 
 blockquote {

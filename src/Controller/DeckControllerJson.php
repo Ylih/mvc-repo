@@ -59,8 +59,14 @@ class DeckControllerJson extends AbstractController
     #[Route("/api/deck/draw", name: "api_deck_draw", methods: ["POST"])]
     public function jsonDeckDraw(SessionInterface $session): Response
     {
-        /** @var \App\Card\DeckOfCards $deck */
+        /** @var \App\Card\DeckOfCards|null $deck */
         $deck = $session->get("deck");
+
+        if ($deck === null) {
+            $deck = new DeckOfCards();
+            $deck->shuffle();
+            $session->set("deck", $deck);
+        }
 
         $card = $deck->draw();
 
@@ -89,8 +95,15 @@ class DeckControllerJson extends AbstractController
     #[Route("/api/deck/draw/{number<\d+>}", name: "api_deck_draw_many", methods: ["POST"])]
     public function jsonDeckDrawMany(SessionInterface $session, int $number): Response
     {
-        /** @var \App\Card\DeckOfCards $deck */
+        /** @var \App\Card\DeckOfCards|null $deck */
         $deck = $session->get("deck");
+
+        if ($deck === null) {
+            $deck = new DeckOfCards();
+            $deck->shuffle();
+            $session->set("deck", $deck);
+        }
+
         $hand = new CardHand();
 
         for ($i = 1; $i <= $number; $i++) {

@@ -58,8 +58,15 @@ class CardGameController extends AbstractController
     #[Route("/card/deck/draw", name: "deck_draw")]
     public function cardDraw(SessionInterface $session): Response
     {
-        /** @var \App\Card\DeckOfCards $deck */
+
+        /** @var \App\Card\DeckOfCards|null $deck */
         $deck = $session->get("deck");
+
+        if ($deck === null) {
+            $deck = new DeckOfCards();
+            $deck->shuffle();
+            $session->set("deck", $deck);
+        }
 
         if ($deck->getNumberCards() <= 0) {
             throw new Exception("Can't draw more cards than the deck currently contains.");
@@ -84,8 +91,14 @@ class CardGameController extends AbstractController
     public function cardDrawMany(SessionInterface $session, int $number): Response
     {
 
-        /** @var \App\Card\DeckOfCards $deck */
+        /** @var \App\Card\DeckOfCards|null $deck */
         $deck = $session->get("deck");
+
+        if ($deck === null) {
+            $deck = new DeckOfCards();
+            $deck->shuffle();
+            $session->set("deck", $deck);
+        }
 
         if ($number > 52) {
             throw new Exception("Can't draw more cards than the deck contains.");

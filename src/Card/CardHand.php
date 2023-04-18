@@ -40,6 +40,33 @@ class CardHand
     }
 
     /**
+     * @return int
+     */
+    public function getSum(): int
+    {
+        $values = [];
+        foreach ($this->hand as $card) {
+            $values[] = $card->getValue();
+        }
+
+        $sum = array_sum($values);
+
+        return $sum;
+    }
+
+    /**
+     * @return string[]
+     */
+    public function getNames(): array
+    {
+        $names = [];
+        foreach ($this->hand as $card) {
+            $names[] = $card->getName();
+        }
+        return $names;
+    }
+
+    /**
      * @return array<int, array{ "type": string, "name": string, "value": int }>
      */
     public function getArray(): array

@@ -5,7 +5,7 @@ namespace App\Controller;
 use App\Card\Card;
 use App\Card\CardHand;
 use App\Card\DeckOfCards;
-use App\Card\Game;
+use App\Card\TwentyOneGame;
 use Exception;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -17,15 +17,15 @@ use Symfony\Component\Routing\Annotation\Route;
 class TwentyOneGameController extends AbstractController
 {
     #[Route("/game", name: "game_start")]
-    public function home(SessionInterface $session): Response
+    public function home(): Response
     {
         return $this->render('game/home.html.twig');
     }
 
     #[Route("/game/init", name: "game_init", methods: ["POST"])]
-    public function gameInit(SessionInterface $session): Response 
+    public function gameInit(SessionInterface $session): Response
     {
-        $game = new Game(new CardHand(), new CardHand(), new DeckOfCards());
+        $game = new TwentyOneGame();
         $game->getDeck()->shuffle();
 
         $session->set("game", $game);
@@ -33,27 +33,22 @@ class TwentyOneGameController extends AbstractController
         return $this->redirectToRoute('game_play');
     }
 
-    #[Route("/game/play", name: "game_play")]
+    #[Route("/game/play", name: "game_play", methods: ['GET'])]
     public function gameBoard(SessionInterface $session): Response
     {
+        /** @var \App\Card\TwentyOneGame|null $game */
         $game = $session->get("game");
-        $deck = $game->getDeck();
+        if ($game === null) {
+            $game = new TwentyOneGame();
+            $game->getDeck()->shuffle();
+
+            $session->set("game", $game);
+        }
+
         $player = $game->getPlayer();
         $bank = $game->getBank();
 
-        //Kolla om någon hand är över 21
-        //Kolla om den handen har ett ess
-        //Sätt värdet på esset till 1
-        //kolla om spelet fortfarande är över
-        //OM INTE fortsätt
-        //ANNARS avgör vinnare
-
-        if ($game->checkLimit($player) || $game->checkLimit($bank)) {
-            $game->setGameOver();
-        }
-
         $data = [
-            "cardsLeft" => $deck->getNumberCards(),
             "player_hand" => $player->getString(),
             "player_sum" => $player->getSum(),
             "bank_hand" => $bank->getString(),
@@ -64,14 +59,27 @@ class TwentyOneGameController extends AbstractController
     }
 
     #[Route("/game/draw", name: "game_draw", methods: ["POST"])]
-    public function gameDraw(SessionInterface $session): Response 
+    public function gameDraw(SessionInterface $session): Response
     {
+        /** @var \App\Card\TwentyOneGame $game */
         $game = $session->get("game");
         $deck = $game->getDeck();
         $hand = $game->getPlayer();
 
         $card = $deck->draw();
         $hand->add($card);
+
+        if ($game->checkLimit($hand) && $game->containsAce($hand)) {
+            $game->handleAce($hand);
+        }
+
+        if ($game->checkLimit($hand)) {
+            $game->setGameOver();
+            $this->addFlash(
+                'winner',
+                'Bank wins'
+            );
+        }
 
         $game->setPlayer($hand);
         $game->setDeck($deck);
@@ -82,19 +90,31 @@ class TwentyOneGameController extends AbstractController
     }
 
     #[Route("/game/stay", name: "game_stay", methods: ["POST"])]
-    public function gameStay(SessionInterface $session): Response 
+    public function gameStay(SessionInterface $session): Response
     {
+        /** @var \App\Card\TwentyOneGame $game */
         $game = $session->get("game");
         $deck = $game->getDeck();
         $bank = $game->getBank();
 
         $game->autoDraw($bank, $deck);
 
-        //Check if $bank is over 21
-        //if $bank is over 21 check if contains ace and ace value is 14.
-        //(method to loop through hand and look for aces if statement will be something like "if $card->getName === "ace" && $card->getValue === 14)
-        //if true set ace value to 1
-        //break the loop after one ace has been set to 1?
+        $game->setGameOver();
+
+        if ($game->checkLimit($bank)) {
+            $this->addFlash(
+                'winner',
+                'Player wins'
+            );
+        }
+
+        if (!$game->checkLimit($bank)) {
+            $winner = $game->compareHands();
+            $this->addFlash(
+                'winner',
+                "{$winner} wins"
+            );
+        }
 
         $game->setBank($bank);
         $game->setDeck($deck);

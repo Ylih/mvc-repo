@@ -19,3 +19,24 @@
 .flash-warning:before {
     content: "⚠";
 }
+
+.flash-winner {
+    text-align: center;
+    font-size: xx-large;
+    font-family: $header-font;
+    font-weight: 600;
+    margin-bottom: $magic-number;
+    padding: 0.5em;
+    color: #ffffff;
+    background-color: #1b7527;
+    border-color: #045001;
+    border-radius: 0.5rem;
+}
+
+.flash-winner:before {
+    content: "♕";
+}
+
+.flash-winner:after {
+    content: "♕";
+}

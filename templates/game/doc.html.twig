@@ -6,10 +6,9 @@
     <h1>Documentation</h1>
     <h3>Tankar</h3>
     <p>
-        Jag funderar på att skapa en game klass som sköter logiken bakom spelet. Tanken är att den håller bankens hand och spelarens hand.
-        Klassen ska ha metoder för att: hämta summan av en hand, kolla om spelet är slut (har någon av händerna över 21?), kolla om en hand innehåller ett ess.
-        Är spelet slut men en hand innehåller ett ess så sätts värdet på esset till 1 och sedan kollar man om spelet är slut igen(fortfarande över 21 trots bytet från 14 till 1).
-        Jag tror även att jag kommer modifiera DeckOfCards klassen och lägga till en metod för att dra kort fram tills värdet av de dragna korten är 17 eller mer.
+        Jag funderar på att skapa en game klass som sköter logiken bakom spelet. Tanken är att den håller bankens hand, spelarens hand och kortleken.
+        Klassen ska ha metoder för att: kolla om spelet är slut (har handen över 21?), kolla om en hand innehåller ett ess och kanske hantering av ess?
+        Är spelet slut men en hand innehåller ett ess så sätts värdet på esset till 1. Jag tror även att jag kommer modifiera DeckOfCards klassen och lägga till en metod för att dra kort fram tills värdet av de dragna korten är 17 eller mer.
         Då min kod fungerar så att kortleken drar korten och inte handen så kommer jag nog även behöva bygga ut CardHand med en metod för att loopa igenom en array av kort och lägga till dem.
         Det gör att jag inte behöver lägga loopen i controllern sen.
     </p>
@@ -38,8 +37,17 @@
     <p>
         Spelaren kan trycka på två knappar, Draw och Stay.
     </p>
-    <h4>Draw -> add card to hand route(process) -> See if player got over 21 points(process) -> IF TRUE game over -> view</h4>
-    <h4>Stay -> add card to bank route(process) -> See if bank got over 21 points(process) -> IF TRUE player won -> IF False get winner(process) -> view</h4>
+    <h4>Draw -> add card to hand from deck -> update players points -> See if player got over 21 points -> IF TRUE flash msg and set game over -> view</h4>
+    <h4>Stay -> add card to bank while bank has less than 17 points -> update banks points -> See if bank got over 21 points -> IF TRUE player won -> IF FALSE get winner -> set game over -> view</h4>
+    <p>
+        Jag hittade en hemsida där man kunde skriva pseudokod i en editor: <a href="https://pseudoeditor.com/app/">pseudoeditor</a>.
+    </p>
+    <p>
+        Med hjälp av hemsidan så framställde jag bilden nedan.
+    </p>
+    <a href="{{ asset('img/pseudo.png') }}">
+        <img class="quarter-width" src="{{ asset('img/pseudo.png') }}" alt="lite pseudokod">
+    </a>
     <p>
         För dokumentationens skull tänkte jag visa upp hur jag brukar skriva medan jag arbetar för att underlätta mitt tänkande.
     </p>

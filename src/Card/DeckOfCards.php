@@ -16,7 +16,6 @@ class DeckOfCards
         $cardClass = strtolower($cardClass);
         $cardType = ["hearts", "spades", "diamonds", "clubs"];
         $cardName = [
-            'ace',
             'two',
             'three',
             'four',
@@ -29,6 +28,7 @@ class DeckOfCards
             'jack',
             'queen',
             'king',
+            'ace',
         ];
 
         $flag = false;
@@ -36,14 +36,14 @@ class DeckOfCards
         if ($cardClass === "graphic") {
             foreach ($cardType as $type) {
                 for ($i = 1; $i <= 13; $i++) {
-                    $this->deck[] = new CardGraphic($type, $cardName[$i-1], $i);
+                    $this->deck[] = new CardGraphic($type, $cardName[$i-1], $i + 1);
                 }
             }
             $flag = true;
         } elseif ($cardClass === "basic") {
             foreach ($cardType as $type) {
                 for ($i = 1; $i <= 13; $i++) {
-                    $this->deck[] = new Card($type, $cardName[$i-1], $i);
+                    $this->deck[] = new Card($type, $cardName[$i-1], $i + 1);
                 }
             }
             $flag = true;
@@ -108,5 +108,4 @@ class DeckOfCards
         }
         return $values;
     }
-
 }
