@@ -53,6 +53,14 @@ class DeckOfCards
         }
     }
 
+    /**
+     * @return Card[]
+     */
+    public function getDeck(): array
+    {
+        return $this->deck;
+    }
+
     public function shuffle(): void
     {
         shuffle($this->deck);
