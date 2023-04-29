@@ -3,47 +3,47 @@ Search.appendIndex(
                 {
             "fqsen": "\\App\\Card\\Card",
             "name": "Card",
-            "summary": "",
+            "summary": "The\u0020Card\u0020class\u0020is\u0020meant\u0020to\u0020act\u0020as\u0020a\u0020card\u0020in\u0020a\u0020card\u0020game.",
             "url": "classes/App-Card-Card.html"
         },                {
             "fqsen": "\\App\\Card\\Card\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "The\u0020constructor\u0020constructs\u0020a\u0020Card\u0020object\u0020with\u0020the\u0020specified\u0020type,\u0020name\u0020and\u0020value.",
             "url": "classes/App-Card-Card.html#method___construct"
         },                {
             "fqsen": "\\App\\Card\\Card\u003A\u003AgetType\u0028\u0029",
             "name": "getType",
-            "summary": "",
+            "summary": "get\u0020the\u0020string\u0020of\u0020\u0024type",
             "url": "classes/App-Card-Card.html#method_getType"
         },                {
             "fqsen": "\\App\\Card\\Card\u003A\u003AgetName\u0028\u0029",
             "name": "getName",
-            "summary": "",
+            "summary": "get\u0020the\u0020string\u0020of\u0020\u0024name",
             "url": "classes/App-Card-Card.html#method_getName"
         },                {
             "fqsen": "\\App\\Card\\Card\u003A\u003AgetValue\u0028\u0029",
             "name": "getValue",
-            "summary": "",
+            "summary": "get\u0020the\u0020int\u0020of\u0020\u0024value",
             "url": "classes/App-Card-Card.html#method_getValue"
         },                {
             "fqsen": "\\App\\Card\\Card\u003A\u003AsetValue\u0028\u0029",
             "name": "setValue",
-            "summary": "",
+            "summary": "set\u0020the\u0020int\u0020of\u0020\u0024value",
             "url": "classes/App-Card-Card.html#method_setValue"
         },                {
             "fqsen": "\\App\\Card\\Card\u003A\u003AgetAsString\u0028\u0029",
             "name": "getAsString",
-            "summary": "",
+            "summary": "get\u0020a\u0020string\u0020containing\u0020a\u0020CSS\u0020class\u0020\u0022alt\u002Dcontainer\u0022\u0020and\u0020\u0024name\u002D\u0024type.\u0020Example\u003A\u0020\u0022alt\u002Dcontainer\u0020ace\u002Dspades\u0022",
             "url": "classes/App-Card-Card.html#method_getAsString"
         },                {
             "fqsen": "\\App\\Card\\Card\u003A\u003AgetAsLowRes\u0028\u0029",
             "name": "getAsLowRes",
-            "summary": "",
+            "summary": "get\u0020a\u0020string\u0020with\u0020card\u0020letter\u0020and\u0020symbol.",
             "url": "classes/App-Card-Card.html#method_getAsLowRes"
         },                {
             "fqsen": "\\App\\Card\\Card\u003A\u003AgetAsArray\u0028\u0029",
             "name": "getAsArray",
-            "summary": "",
+            "summary": "get\u0020an\u0020associative\u0020array\u0020with\u0020the\u0020attributes\u0020of\u0020the\u0020card.",
             "url": "classes/App-Card-Card.html#method_getAsArray"
         },                {
             "fqsen": "\\App\\Card\\Card\u003A\u003A\u0024value",
@@ -63,22 +63,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\CardGraphic",
             "name": "CardGraphic",
-            "summary": "",
+            "summary": "The\u0020CardGraphic\u0020class\u0020is\u0020an\u0020extension\u0020of\u0020the\u0020Card\u0020class.",
             "url": "classes/App-Card-CardGraphic.html"
         },                {
             "fqsen": "\\App\\Card\\CardGraphic\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "The\u0020constructor\u0020constructs\u0020a\u0020Card\u0020object\u0020with\u0020the\u0020specified\u0020type,\u0020name\u0020and\u0020value.",
             "url": "classes/App-Card-CardGraphic.html#method___construct"
         },                {
             "fqsen": "\\App\\Card\\CardGraphic\u003A\u003AgetAsString\u0028\u0029",
             "name": "getAsString",
-            "summary": "",
+            "summary": "get\u0020a\u0020string\u0020containing\u0020a\u0020CSS\u0020class\u0020\u0022card\u002Dcontainer\u0022\u0020and\u0020\u0024name\u002Dof\u002D\u0024type.\u0020Example\u003A\u0020\u0022card\u002Dcontainer\u0020ace\u002Dof\u002Dspades\u0022",
             "url": "classes/App-Card-CardGraphic.html#method_getAsString"
         },                {
             "fqsen": "\\App\\Card\\CardGraphic\u003A\u003AgetAsLowRes\u0028\u0029",
             "name": "getAsLowRes",
-            "summary": "",
+            "summary": "returns\u0020an\u0020empty\u0020string.",
             "url": "classes/App-Card-CardGraphic.html#method_getAsLowRes"
         },                {
             "fqsen": "\\App\\Card\\CardHand",
