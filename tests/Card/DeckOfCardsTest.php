@@ -12,7 +12,7 @@ class DeckOfCardsTest extends TestCase
     /**
      * Construct object.
      */
-    public function testCreateObjectNoArg()
+    public function testCreateObjectNoArg(): void
     {
         $deck = new DeckOfCards();
         $typeOfCard = $deck->getDeck();
@@ -26,7 +26,7 @@ class DeckOfCardsTest extends TestCase
     /**
      * Construct object with viable arg.
      */
-    public function testCreateObjectWithArg()
+    public function testCreateObjectWithArg(): void
     {
         $deck = new DeckOfCards("basic");
         $typeOfCard = $deck->getDeck();
@@ -40,7 +40,7 @@ class DeckOfCardsTest extends TestCase
     /**
      * Verify exception thrown with a non-viable arg.
      */
-    public function testCreateObjectException()
+    public function testCreateObjectException(): void
     {
         $this->expectException(\Exception::class);
         $deck = new DeckOfCards("testing");
@@ -50,7 +50,7 @@ class DeckOfCardsTest extends TestCase
     /**
      * Verify shuffle works.
      */
-    public function testShuffle()
+    public function testShuffle(): void
     {
         $deck = new DeckOfCards();
         $exp = new DeckOfCards();
@@ -63,7 +63,7 @@ class DeckOfCardsTest extends TestCase
     /**
      * Verify draw works.
      */
-    public function testDraw()
+    public function testDraw(): void
     {
         $deck = new DeckOfCards();
 
@@ -78,7 +78,7 @@ class DeckOfCardsTest extends TestCase
     /**
      * Verify draw exception raised on empty deck.
      */
-    public function testDrawException()
+    public function testDrawException(): void
     {
         $deck = new DeckOfCards();
 
@@ -95,7 +95,7 @@ class DeckOfCardsTest extends TestCase
     /**
      * Verify getString works.
      */
-    public function testGetString()
+    public function testGetString(): void
     {
         $deck = new DeckOfCards();
 
@@ -115,7 +115,7 @@ class DeckOfCardsTest extends TestCase
     /**
      * Verify getArray works.
      */
-    public function testGetArray()
+    public function testGetArray(): void
     {
         $deck = new DeckOfCards();
 
@@ -155,7 +155,7 @@ class DeckOfCardsTest extends TestCase
     /**
      * Verify getLowRes works. If card class is CardGraphic it will return array of empty strings.
      */
-    public function testGetLowRes()
+    public function testGetLowRes(): void
     {
         $deck = new DeckOfCards();
 

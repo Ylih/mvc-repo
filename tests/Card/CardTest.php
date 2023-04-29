@@ -12,7 +12,7 @@ class CardTest extends TestCase
     /**
      * Construct object.
      */
-    public function testCreateObject()
+    public function testCreateObject(): void
     {
         $card = new Card("spades", "ace", 14);
 
@@ -34,7 +34,7 @@ class CardTest extends TestCase
     /**
      * Verify that setValue works.
      */
-    public function testSetValue()
+    public function testSetValue(): void
     {
         $card = new Card("spades", "ace", 14);
 
@@ -52,7 +52,7 @@ class CardTest extends TestCase
     /**
      * Verify that getAsString works.
      */
-    public function testGetAsString()
+    public function testGetAsString(): void
     {
         $card = new Card("spades", "ace", 14);
         $res = $card->getAsString();
@@ -63,7 +63,7 @@ class CardTest extends TestCase
     /**
      * Verify that getAsArray works.
      */
-    public function testGetAsArray()
+    public function testGetAsArray(): void
     {
         $card = new Card("spades", "ace", 14);
         $res = $card->getAsArray();
@@ -75,7 +75,7 @@ class CardTest extends TestCase
     /**
      * Verify that getAsLowRes works.
      */
-    public function testGetAsLowRes()
+    public function testGetAsLowRes(): void
     {
         $card = new Card("spades", "ace", 14);
         $res = $card->getAsLowRes();

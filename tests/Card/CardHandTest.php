@@ -12,7 +12,7 @@ class CardHandTest extends TestCase
     /**
      * Construct object.
      */
-    public function testCreateObject()
+    public function testCreateObject(): void
     {
         $hand = new CardHand();
         $handArr = $hand->getHand();
@@ -25,7 +25,7 @@ class CardHandTest extends TestCase
     /**
      * Verify add card objects to hand works.
      */
-    public function testAdd()
+    public function testAdd(): void
     {
         $hand = new CardHand();
         $card = new Card("spades", "ace", 14);
@@ -47,7 +47,7 @@ class CardHandTest extends TestCase
     /**
      * Verify getString works.
      */
-    public function testGetString()
+    public function testGetString(): void
     {
         $hand = new CardHand();
         $cards = [
@@ -73,7 +73,7 @@ class CardHandTest extends TestCase
     /**
      * Verify getSum works.
      */
-    public function testGetSum()
+    public function testGetSum(): void
     {
         $hand = new CardHand();
         $cards = [
@@ -95,7 +95,7 @@ class CardHandTest extends TestCase
     /**
      * Verify getArray works.
      */
-    public function testGetArray()
+    public function testGetArray(): void
     {
         $hand = new CardHand();
         $cards = [
@@ -133,7 +133,7 @@ class CardHandTest extends TestCase
     /**
      * Verify getNames works.
      */
-    public function testGetNames()
+    public function testGetNames(): void
     {
         $hand = new CardHand();
         $cards = [
@@ -155,7 +155,7 @@ class CardHandTest extends TestCase
     /**
      * Verify getLowRes works.
      */
-    public function testGetLowRes()
+    public function testGetLowRes(): void
     {
         $hand = new CardHand();
         $cards = [

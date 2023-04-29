@@ -12,7 +12,7 @@ class TwentyOneGameTest extends TestCase
     /**
      * Construct object.
      */
-    public function testCreateObject()
+    public function testCreateObject(): void
     {
         $game = new TwentyOneGame();
         $bank = $game->getBank();
@@ -38,7 +38,7 @@ class TwentyOneGameTest extends TestCase
     /**
      * Verify setBank works.
      */
-    public function testSetBank()
+    public function testSetBank(): void
     {
         $game = new TwentyOneGame();
 
@@ -66,7 +66,7 @@ class TwentyOneGameTest extends TestCase
     /**
      * Verify setPlayer works.
      */
-    public function testSetPlayer()
+    public function testSetPlayer(): void
     {
         $game = new TwentyOneGame();
 
@@ -94,7 +94,7 @@ class TwentyOneGameTest extends TestCase
     /**
      * Verify setDeck works.
      */
-    public function testSetDeck()
+    public function testSetDeck(): void
     {
         $game = new TwentyOneGame();
 
@@ -119,7 +119,7 @@ class TwentyOneGameTest extends TestCase
     /**
      * Verify setGameOver works.
      */
-    public function testSetGameOver()
+    public function testSetGameOver(): void
     {
         $game = new TwentyOneGame();
         $activeGame = $game->getGame();
@@ -134,7 +134,7 @@ class TwentyOneGameTest extends TestCase
     /**
      * Verify CheckLimit works.
      */
-    public function testCheckLimit()
+    public function testCheckLimit(): void
     {
         $game = new TwentyOneGame();
         $player = $game->getPlayer();
@@ -158,7 +158,7 @@ class TwentyOneGameTest extends TestCase
     /**
      * Verify containsAce works.
      */
-    public function testContainsAce()
+    public function testContainsAce(): void
     {
         $game = new TwentyOneGame();
         $hand = new CardHand();
@@ -191,7 +191,7 @@ class TwentyOneGameTest extends TestCase
     /**
      * Verify handleAce works.
      */
-    public function testHandleAce()
+    public function testHandleAce(): void
     {
         $game = new TwentyOneGame();
         $hand = new CardHand();
@@ -218,7 +218,7 @@ class TwentyOneGameTest extends TestCase
     /**
      * Verify autoDraw works.
      */
-    public function testAutoDraw()
+    public function testAutoDraw(): void
     {
         $game = new TwentyOneGame();
         $player = $game->getPlayer();
@@ -235,11 +235,10 @@ class TwentyOneGameTest extends TestCase
     /**
      * Verify compareHands works.
      */
-    public function testCompareHands()
+    public function testCompareHands(): void
     {
         $game = new TwentyOneGame();
         $player = $game->getPlayer();
-        $bank = $game->getBank();
 
         $res = $game->compareHands();
         $this->assertEquals("Bank", $res);

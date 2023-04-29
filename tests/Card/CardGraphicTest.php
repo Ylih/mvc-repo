@@ -12,7 +12,7 @@ class CardGraphicTest extends TestCase
     /**
      * Construct object.
      */
-    public function testCreateObject()
+    public function testCreateObject(): void
     {
         $card = new CardGraphic("spades", "ace", 14);
 
@@ -34,7 +34,7 @@ class CardGraphicTest extends TestCase
     /**
      * Verify that getAsString works.
      */
-    public function testGetAsString()
+    public function testGetAsString(): void
     {
         $card = new CardGraphic("spades", "ace", 14);
         $res = $card->getAsString();
@@ -45,7 +45,7 @@ class CardGraphicTest extends TestCase
     /**
      * Verify that getAsLowRes works.
      */
-    public function testGetAsLowRes()
+    public function testGetAsLowRes(): void
     {
         $card = new CardGraphic("spades", "ace", 14);
         $res = $card->getAsLowRes();
