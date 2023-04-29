@@ -83,52 +83,52 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\CardHand",
             "name": "CardHand",
-            "summary": "",
+            "summary": "The\u0020CardHand\u0020class\u0020is\u0020meant\u0020to\u0020act\u0020as\u0020a\u0020hand\u0020in\u0020a\u0020card\u0020game.",
             "url": "classes/App-Card-CardHand.html"
         },                {
             "fqsen": "\\App\\Card\\CardHand\u003A\u003Aadd\u0028\u0029",
             "name": "add",
-            "summary": "",
+            "summary": "Adds\u0020a\u0020card\u0020to\u0020the\u0020\u0024hand\u0020array.",
             "url": "classes/App-Card-CardHand.html#method_add"
         },                {
             "fqsen": "\\App\\Card\\CardHand\u003A\u003AgetHand\u0028\u0029",
             "name": "getHand",
-            "summary": "",
+            "summary": "Returns\u0020the\u0020\u0024hand\u0020array.",
             "url": "classes/App-Card-CardHand.html#method_getHand"
         },                {
             "fqsen": "\\App\\Card\\CardHand\u003A\u003AcountCards\u0028\u0029",
             "name": "countCards",
-            "summary": "",
+            "summary": "Counts\u0020the\u0020amount\u0020of\u0020items\u0020in\u0020the\u0020\u0024hand\u0020array.",
             "url": "classes/App-Card-CardHand.html#method_countCards"
         },                {
             "fqsen": "\\App\\Card\\CardHand\u003A\u003AgetString\u0028\u0029",
             "name": "getString",
-            "summary": "",
+            "summary": "Loops\u0020through\u0020the\u0020Card\u0020objects\u0020in\u0020the\u0020\u0024hand.\u0020For\u0020each\u0020iteration\u0020call\u0020the\u0020Card\u0020method\u0020\u0022getAsString\u0022\u0020and\u0020push\u0020result\u0020to\u0020an\u0020array.",
             "url": "classes/App-Card-CardHand.html#method_getString"
         },                {
             "fqsen": "\\App\\Card\\CardHand\u003A\u003AgetSum\u0028\u0029",
             "name": "getSum",
-            "summary": "",
+            "summary": "Sums\u0020all\u0020the\u0020Card\u0020values\u0020in\u0020\u0024hand.",
             "url": "classes/App-Card-CardHand.html#method_getSum"
         },                {
             "fqsen": "\\App\\Card\\CardHand\u003A\u003AgetNames\u0028\u0029",
             "name": "getNames",
-            "summary": "",
+            "summary": "Get\u0020name\u0020of\u0020all\u0020Cards\u0020in\u0020\u0024hand.",
             "url": "classes/App-Card-CardHand.html#method_getNames"
         },                {
             "fqsen": "\\App\\Card\\CardHand\u003A\u003AgetArray\u0028\u0029",
             "name": "getArray",
-            "summary": "",
+            "summary": "Get\u0020array\u0020containing\u0020associative\u0020arrays\u0020of\u0020each\u0020Card\u0020objects\u0020attributes.",
             "url": "classes/App-Card-CardHand.html#method_getArray"
         },                {
             "fqsen": "\\App\\Card\\CardHand\u003A\u003AgetLowRes\u0028\u0029",
             "name": "getLowRes",
-            "summary": "",
+            "summary": "Loops\u0020through\u0020the\u0020Card\u0020objects\u0020in\u0020the\u0020\u0024hand.\u0020For\u0020each\u0020iteration\u0020call\u0020the\u0020Card\u0020method\u0020\u0022getAsLowRes\u0022\u0020and\u0020push\u0020result\u0020to\u0020an\u0020array.",
             "url": "classes/App-Card-CardHand.html#method_getLowRes"
         },                {
             "fqsen": "\\App\\Card\\CardHand\u003A\u003A\u0024hand",
             "name": "hand",
-            "summary": "",
+            "summary": "\u0024hand\u0020is\u0020an\u0020array\u0020that\u0020holds\u0020Card\u0020objects.",
             "url": "classes/App-Card-CardHand.html#property_hand"
         },                {
             "fqsen": "\\App\\Card\\DeckOfCards",
@@ -140,6 +140,11 @@ Search.appendIndex(
             "name": "__construct",
             "summary": "",
             "url": "classes/App-Card-DeckOfCards.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003AgetDeck\u0028\u0029",
+            "name": "getDeck",
+            "summary": "",
+            "url": "classes/App-Card-DeckOfCards.html#method_getDeck"
         },                {
             "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003Ashuffle\u0028\u0029",
             "name": "shuffle",

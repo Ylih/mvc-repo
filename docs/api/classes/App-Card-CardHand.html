@@ -119,12 +119,14 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Card/CardHand.php"><a href="files/src-card-cardhand.html"><abbr title="src/Card/CardHand.php">CardHand.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">5</span>
+    <span class="phpdocumentor-element-found-in__line">11</span>
 
     </aside>
 
-        
-    <section class="phpdocumentor-description"></section>
+            <p class="phpdocumentor-summary">The CardHand class is meant to act as a hand in a card game.</p>
+
+    <section class="phpdocumentor-description"><p>The function of this class is to hold multiple Card objects.</p>
+</section>
 
 
 
@@ -144,63 +146,63 @@
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
-<dd></dd>
+<dd>$hand is an array that holds Card objects.</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Card-CardHand.html#method_add">add()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd></dd>
+<dd>Adds a card to the $hand array.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Card-CardHand.html#method_countCards">countCards()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
-<dd></dd>
+<dd>Counts the amount of items in the $hand array.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Card-CardHand.html#method_getArray">getArray()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Get array containing associative arrays of each Card objects attributes.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Card-CardHand.html#method_getHand">getHand()</a>
     <span>
                                 &nbsp;: array&lt;string|int, <a href="classes/App-Card-Card.html"><abbr title="\App\Card\Card">Card</abbr></a>&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Returns the $hand array.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Card-CardHand.html#method_getLowRes">getLowRes()</a>
     <span>
                                 &nbsp;: array&lt;string|int, string&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Loops through the Card objects in the $hand. For each iteration call the Card method &quot;getAsLowRes&quot; and push result to an array.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Card-CardHand.html#method_getNames">getNames()</a>
     <span>
                                 &nbsp;: array&lt;string|int, string&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Get name of all Cards in $hand.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Card-CardHand.html#method_getString">getString()</a>
     <span>
                                 &nbsp;: array&lt;string|int, string&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Loops through the Card objects in the $hand. For each iteration call the Card method &quot;getAsString&quot; and push result to an array.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Card-CardHand.html#method_getSum">getSum()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
-<dd></dd>
+<dd>Sums all the Card values in $hand.</dd>
 
         </dl>
 
@@ -230,11 +232,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Card/CardHand.php"><a href="files/src-card-cardhand.html"><abbr title="src/Card/CardHand.php">CardHand.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">8</span>
+    <span class="phpdocumentor-element-found-in__line">17</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">$hand is an array that holds Card objects.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
@@ -266,17 +269,17 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Card/CardHand.php"><a href="files/src-card-cardhand.html"><abbr title="src/Card/CardHand.php">CardHand.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">10</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Adds a card to the $hand array.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">add</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Card-Card.html"><abbr title="\App\Card\Card">Card</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$card</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -284,7 +287,8 @@
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Card-Card.html"><abbr title="\App\Card\Card">Card</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Card object to add.</p>
+</section>
 
             </dd>
             </dl>
@@ -310,24 +314,26 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Card/CardHand.php"><a href="files/src-card-cardhand.html"><abbr title="src/Card/CardHand.php">CardHand.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">25</span>
+    <span class="phpdocumentor-element-found-in__line">44</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Counts the amount of items in the $hand array.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">countCards</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">int</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>the amount of items as a numeric value.</p>
+</section>
+
     
 </article>
                     <article
@@ -343,16 +349,19 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Card/CardHand.php"><a href="files/src-card-cardhand.html"><abbr title="src/Card/CardHand.php">CardHand.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">72</span>
+    <span class="phpdocumentor-element-found-in__line">99</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get array containing associative arrays of each Card objects attributes.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getArray</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
-    
+        <section class="phpdocumentor-description"><p>Loops through the Card objects in the $hand. For each iteration call the Card method &quot;getAsArray&quot; and push result to an array.</p>
+</section>
+
     
     
 
@@ -375,11 +384,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Card/CardHand.php"><a href="files/src-card-cardhand.html"><abbr title="src/Card/CardHand.php">CardHand.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">20</span>
+    <span class="phpdocumentor-element-found-in__line">35</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Returns the $hand array.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getHand</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/App-Card-Card.html"><abbr title="\App\Card\Card">Card</abbr></a>&gt;</span></code>
@@ -407,11 +417,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Card/CardHand.php"><a href="files/src-card-cardhand.html"><abbr title="src/Card/CardHand.php">CardHand.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">84</span>
+    <span class="phpdocumentor-element-found-in__line">112</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Loops through the Card objects in the $hand. For each iteration call the Card method &quot;getAsLowRes&quot; and push result to an array.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getLowRes</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
@@ -423,7 +434,9 @@
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>Returns array with the result.</p>
+</section>
+
     
 </article>
                     <article
@@ -439,23 +452,28 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Card/CardHand.php"><a href="files/src-card-cardhand.html"><abbr title="src/Card/CardHand.php">CardHand.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">60</span>
+    <span class="phpdocumentor-element-found-in__line">85</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get name of all Cards in $hand.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getNames</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
 
-    
+        <section class="phpdocumentor-description"><p>Loops through the Card objects in the $hand. For each iteration call the Card method &quot;getName&quot; and push result to an array.</p>
+</section>
+
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>Returns array containing strings like &quot;ace&quot;, &quot;two&quot;, &quot;queen&quot;.</p>
+</section>
+
     
 </article>
                     <article
@@ -471,11 +489,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Card/CardHand.php"><a href="files/src-card-cardhand.html"><abbr title="src/Card/CardHand.php">CardHand.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">33</span>
+    <span class="phpdocumentor-element-found-in__line">53</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Loops through the Card objects in the $hand. For each iteration call the Card method &quot;getAsString&quot; and push result to an array.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getString</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
@@ -487,7 +506,9 @@
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>Returns array with the result.</p>
+</section>
+
     
 </article>
                     <article
@@ -503,23 +524,29 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Card/CardHand.php"><a href="files/src-card-cardhand.html"><abbr title="src/Card/CardHand.php">CardHand.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">45</span>
+    <span class="phpdocumentor-element-found-in__line">68</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Sums all the Card values in $hand.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getSum</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
-    
+        <section class="phpdocumentor-description"><p>Loops through the Card objects in the $hand. For each iteration call the Card method &quot;getValue&quot; and push result to an array.
+Then uses array_sum on that array to get sum of $hand.</p>
+</section>
+
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">int</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>Returns the sum of $hand.</p>
+</section>
+
     
 </article>
             </section>
