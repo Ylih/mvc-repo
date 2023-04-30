@@ -159,9 +159,37 @@
         </p>
 
         <h2 id="kmom04">Kursmoment 04</h2>
-        <h3>PH QUESTION</h3>
+        <h3>Berätta hur du upplevde att skriva kod som testar annan kod med PHPUnit och hur du upplever phpunit rent allmänt.</h3>
         <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, nihil!
+            Installationen gick inte helt felfritt. Jag körde en för gammal version av PHPUnit i min composer.json vilket gjorde att min phpunit.xml inte fungerade som den skulle.
+            Jag löste detta genom att installera om allt och skriva "^10" i composer.json. När jag väl kom igång så tyckte jag att det gick fort att skriva mina tester.
+            Det påminde mycket om när vi skrev tester i OOP kursen.
+        </p>
+        <h3>Hur väl lyckades du med kodtäckningen av din kod, lyckades du nå mer än 90% kodtäckning?</h3>
+        <p>
+            Jag lyckades nå 100% kodtäckning i mitt namespace för App\Card. Däremot är inte mina tester särskilt roliga då de flesta kollar positivta cases när allt gått som det ska.
+            Jag testar de exceptions som kastas om något går tokigt till men jag har svårt att komma på kreativa tester då användaren gör något tokigt.
+        </p>
+        <h3>Upplever du din egen kod som “testbar kod” eller finns det delar i koden som är mer eller mindre testbar och finns det saker som kan göras för att förbättra kodens testbarhet?</h3>
+        <p>
+            Min kod är väl inte den mest testbara. Det är en hel del coupling involverat i min kod och ska man göra rätt för sig hade det krävts en del mockande.
+            I efterhand så hade jag kunnat flytta på containsAce till CardHand klassen för att ta bort ett steg i kedjan. Det hade gått från TwentyOneGame.containsAce -> Hand.getHand -> Card.setValue till
+            Hand.getHand -> Card.setValue. Däremot så tycker jag att handleAce passar i TwentyOneGame klassen fast den tekniskt sätt också hade kunnat flyttats till CardHand.
+            Jag tycker detta eftersom den metoden har med spelets logik att göra.
+        </p>
+        <h3>Valde du att skriva om delar av din kod för att förbättra den eller göra den mer testbar, om så berätta lite hur du tänkte.</h3>
+        <p>
+            Jag valde att inte skriva om någon kod. Däremot valde jag att lägga till en metod i min DeckOfCards som returnerar arrayen som håller alla 52 korten.
+            Jag gjorde detta för att kunna använda assertCount på arrayen för att se om summan av föremål blev mindre när man drar ett kort.
+        </p>
+        <h3>Fundera över om du anser att testbar kod är något som kan identifiera “snygg och ren kod”.</h3>
+        <p>
+            Personligen skulle jag vilja påstå att snygg och ren kod är kod som är lätt att förstå och inte onödigt komplex.
+            Det verkar som att det finns ett samband mellan enkelhet och testbarhet så därför skulle jag vilja påstå att testbar kod är ett steg mot snygg och ren kod.
+        </p>
+        <h3>Vilken är din TIL för detta kmom?</h3>
+        <p>
+            I detta kursmoment har jag lärt mig om phpunit, enhetstestning och hur man kan använda sig av phpdoc för att generera dokumentation för sin kod.
         </p>
 
         <h2 id="kmom05">Kursmoment 05</h2>
