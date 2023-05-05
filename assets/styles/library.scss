@@ -1,0 +1,10 @@
+.book-img {
+    max-width: 300px;
+    margin-bottom: $magic-number;
+}
+
+.book-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
