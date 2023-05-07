@@ -193,9 +193,59 @@
         </p>
 
         <h2 id="kmom05">Kursmoment 05</h2>
-        <h3>PH QUESTION</h3>
+
+        <h3>Gick det bra att jobba igenom övningen med Symfony och Doctrine. Något särskilt du tänkte/reagerade på under övningen?</h3>
         <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, nihil!
+            Det gick bra för mig att arbeta igenom övningen. Installationen gick snabbt och smidigt och övningen gav en god inblick i hur jag skulle tackla uppgiften.
+            En tanke som kom upp under övningen var hur fort det gick att få till en databas med tabeller med doctrine. När jag kollade på min entity "Book" så insåg jag också
+            hur mycket den klassen påminnde om en tabell i en databas. Book har getters och setters vilket man kan jämföra mot queries som select och update.
+        </p>
+        <table class="table">
+            <caption>Book</caption>
+            <thead>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>ISBN</th>
+                <th>Image</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>6</td>
+                    <td>The Great Gatsby</td>
+                    <td>F. Scott Fitzgerald</td>
+                    <td>9780241341469</td>
+                    <td>---</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Berätta om din applikation och hur du tänkte när du byggde upp den. Tänkte du något speciellt på användargränssnittet?</h3>
+        <p>
+            Min första tanke var att låta landningssidan vara som de tidigare uppgifterna. Den skulle ha knappar för att ta sig vidare till andra sidor.
+            Jag insåg att jag inte tyckte det var ett jättebra gränssnitt i detta sammanhang så jag gjorde om det.
+            Jag gjorde så man kan se tabellen med alla böcker på landningssidan och sedan under tabellen ligger en knapp för att lägga till ny bok.
+            Sedan kan man visa upp specifik bok, redigera bok eller ta bort bok genom att trycka på en av ikonerna i tabellen under kolumnen "Tools".
+            Man kan även trycka på bokens id-nummer för att få fram den specifika vyn.
+        </p>
+
+        <h3>Gick det bra att jobba med ORM i CRUD eller vad anser du om det, jämför gärna med andra sätt att jobba med databaser?</h3>
+        <p>
+            Det gick bra och väldigt fort. Om jag hade behövt bygga databasen för hand hade det tagit mycket längre tid. Däremot hade jag nog kunnat skräddarsy
+            databasen mer efter mina egna behov samt haft större koll på den.
+        </p>
+
+        <h3>Vad är din uppfattning om ORM så här långt och relatera gärna till andra sätt att jobba med applikationskod mot databaser?</h3>
+        <p>
+            Min uppfattning om ORM är att det fungerar som en tolk mellan programmeringsspråk och databas queries.
+            Eftersom queries kan se annorlunda ut beroende på vilken databas man använder så hjälper ORM oss genom att skriva om all vår kod för just den typen av databas.
+            En annan stor fördel med ORM är att man kan byta databas utan större problem så länge det finns stöd för den. Eftersom vi använder oss utav doctrine i detta fall
+            så är det de databaser som existerar inom doctrines DBAL (database abstraction layer) som det finns stöd för.
+        </p>
+
+        <h3>Vilken är din TIL för detta kmom?</h3>
+        <p>
+            I detta kursmoment har jag huvudsakligen lärt mig om ORM och doctrine.
         </p>
 
         <h2 id="kmom06">Kursmoment 06</h2>
