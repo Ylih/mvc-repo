@@ -96,7 +96,7 @@ class CardHand
     /**
      * Get array containing associative arrays of each Card objects attributes.
      * Loops through the Card objects in the $hand. For each iteration call the Card method "getAsArray" and push result to an array.
-     * @return array<int,array{type: string, name: string, value: int }>
+     * @return array<int,array{type: string, name: string, value: int}>
      */
     public function getArray(): array
     {

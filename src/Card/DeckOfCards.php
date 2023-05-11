@@ -94,7 +94,7 @@ class DeckOfCards
     }
 
     /**
-     * @return array<int,array{type: string, name: string, value: int }>
+     * @return array<int,array{type: string, name: string, value: int}>
      */
     public function getArray(): array
     {
