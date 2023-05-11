@@ -107,6 +107,7 @@ class Card
 
     /**
      * get an associative array with the attributes of the card.
+     *
      * @return array{ "type": string, "name": string, "value": int }
      */
     public function getAsArray(): array

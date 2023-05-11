@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Library{% endblock %}
+
+{% block body %}
+    <div class="expander">
+        <div class="book-container">
+            <h1>Delete book</h1>
+            <h2>{{book.title}}</h2>
+            <h3>by {{book.author}}</h3>
+            <h4>ISBN: {{book.isbn}}</h4>
+            {% if book.img != "" %}
+                <img class="book-img block" src="{{book.img}}" alt="en bild">
+            {% endif %}
+            <h2>Are you sure you want to delete the book?</h2>
+            <h5>This action can not be undone.</h5>
+            <form method="post" action="{{ path('book_delete_post', {'bookId':book.id}) }}">
+                <input type="submit" class="button" name="send" value="Delete">
+            </form>
+        </div>
+    </div>
+{% endblock %}

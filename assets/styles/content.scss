@@ -46,6 +46,10 @@ body main {
     }
 }
 
+img {
+    max-width: 100%;
+}
+
 blockquote {
     margin: 0 1.5rem $magic-number 1.5rem;
 }

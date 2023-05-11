@@ -160,7 +160,7 @@ class DeckOfCardsTest extends TestCase
         $deck = new DeckOfCards();
 
         $res = $deck->getLowRes();
-        $fiveFirst = $fiveFirst = array_slice($res, 0, 5);
+        $fiveFirst = array_slice($res, 0, 5);
         $exp = ["", "", "", "", ""];
 
         $this->assertEquals($exp, $fiveFirst);

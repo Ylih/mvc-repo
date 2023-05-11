@@ -67,6 +67,7 @@ class CardHand
      */
     public function getSum(): int
     {
+        /** @var int[] $values */
         $values = [];
         foreach ($this->hand as $card) {
             $values[] = $card->getValue();
@@ -94,7 +95,7 @@ class CardHand
     /**
      * Get array containing associative arrays of each Card objects attributes.
      * Loops through the Card objects in the $hand. For each iteration call the Card method "getAsArray" and push result to an array.
-     * @return array<int, array{ "type": string, "name": string, "value": int }>
+     * @return array<mixed, array{ "type": string, "name": string, "value": int }>
      */
     public function getArray(): array
     {

@@ -1,0 +1,131 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Metrics{% endblock %}
+
+{% block body %}
+    <h1>Metrics</h1>
+
+    <h2>Introduktion</h2>
+    <p>
+        Här kommer jag att gå igenom de sex C:na inom kodkvalitet. Sedan kommer jag att analysera rapporter av min kod från phpmetrics och scrutinizer.
+        Slutligen går jag igenom några förbättringar av min kod och implementerar dem.
+    </p>
+
+    <h3>Codestyle</h3>
+    <p>
+        Codestyle handlar mycket om hur lättläst och organiserad koden är.
+        Ju lättare det är för andra utvecklare att läsa och förstå din kod desto mindre risk är det för missförstånd och buggar vid vidare utveckling.
+    </p>
+
+    <h3>Coverage</h3>
+    <p>
+        Coverage är den mängden rader av kod som täcks upp av tester. Har man en hög coverage visar det på att man testar stor del av sin kod. I mitt fall
+        så har jag tester för alla mina card klasser så jag har fått en coverage i min src katalog på 31.9%.
+        Genom att göra tester för de andra katalogerna hade jag kunnat höja min coverage.
+    </p>
+    <p>
+        Uträckning av coverage:
+    </p>
+    <img src="{{ asset('img/coverage.png') }}" alt="en bild på hur man räknar ut coverage i kod.">
+
+    <h5>
+        Code coverage avrundas uppåt i scrutinizer till närmsta decimal för läsbarhet.
+    </h5>
+
+    <h3>Complexity</h3>
+    <p>
+        Complexity är lite svårare att förklara då det finns många olika typer av komplexitet.
+        Några av de komplexiteter som finns är: conditional complexity, cyclomatic complexity, relative system complexity och data complexity.
+        En tumregel är att sikta på att ha så låg complexity som möjligt. Invecklat är inte coolt.
+    </p>
+    <p>Kortfattat kan man förklara dem på detta sätt:</p>
+
+    <p><b>Conditional complexity</b> - mäter komplexiteten i form av de villkor som används inom metoderna.</p>
+    <p><b>Cyclomatic complexity</b> - mäter samma sak som conditional complexity men tar även med loopar.</p>
+    <p><b>Relative system complexity</b> - mäter komplexiteten på klassen i förhållande till helheten av systemet.</p>
+    <p><b>Data complexity</b> - mäter komplexiteten i datahanteringen inom en klass.</p>
+
+    <h3>Cohesion</h3>
+    <p>
+        Cohesion visar på hur "bra" koden i en klass hör ihop. Hög cohesion visar på en hög självständighet inom klassen, klassens metoder jobbar mot klassens properties
+        och klassen påverkar bara sig själv. I scrutinizer och phpmetrics kan man finna LCOM vilket är ungefär som en motsats till cohesion.
+        LCOM står för "Lack of Cohesion of Methods" och när LCOM är lågt så är vår cohesion hög.
+    </p>
+
+    <h3>Coupling</h3>
+    <p>
+        Coupling är hur pass kopplad en klass är. Det finns två typer av kopplingar, Afferent coupling (AC) och Efferent coupling (EC).
+    </p>
+    <p>
+        AC är den kopplingen som visar hur många klasser som är kopplad till den specifika klassen.
+        I mitt fall så har Card klassen en AC på 3 då DeckOfCards, CardHand och TwentyOneGame alla använder sig utav av Card på något sätt.
+    </p>
+    <img src="{{ asset('img/card-coupling.png') }}" alt="en bild som visar hur kopplad Card klassen är.">
+    <h5>En bild som visar en del av phpmetrics tabell för coupling.</h5>
+
+    <p>
+        EC är motsatsen till AC, det är hur många klasser som klassen är kopplad till. I mitt fall använder TwentyOneGame CardHand och DeckOfCards vilket
+        ger den en EC på 2. Den har en AC på 1 då Controllern för spelet använder klassen.
+    </p>
+    <img src="{{ asset('img/twg-coupling.png') }}" alt="en bild som visar hur kopplad TwentyOneGame klassen är.">
+    <h5>En bild som visar en del ur phpmetrics tabell för coupling.</h5>
+
+    <h3>CRAP</h3>
+    <p>
+        CRAP står för Change Risk Anti Pattern. Det CRAP score mäter är täckningen(coverage) i förhållande till komplexiteten(complexity) av en metod.
+        I bilden nedan kan vi se att min metod med högst crap score är cardDrawMany. Detta beror på att cardDrawMany är både komplex och otestad.
+        Längst ner på bilden är constructorn för DeckOfCards, denna är mer komplex än cardDrawMany men är testad och har därmed mindre crap score.
+    </p>
+    <img src="{{ asset('img/crap-score.png') }}" alt="en bild på scrutinizers least tested operations som visar CRAP score.">
+    <h5>Scrutinizers least tested operations som visar CRAP score.</h5>
+
+    <h2>Phpmetrics</h2>
+    <p>
+        Jag kikar i min phpmetrics rapport och noterar att de två klasserna som verkar ha störst komplexitet är TwentyOneGame och DeckOfCards.
+        Dessa två klasser är även bland de tre största i kategorin "Defects" vilket indikerar på att det är större sannolikhet att något fel skulle ske med dessa klasser.
+        För att sänka komplexiteten och defects så måste koden arbetas om och minska mängden villkor och loopar.
+        Komplexitet och defects har en direkt relation mellan varandra då formeln för defects räknas ut enligt bilden nedan.
+    </p>
+    <img src="{{ asset('img/kans-defect.png') }}" alt="en bild som visar kan's defect formel.">
+    <h5>Jämför gärna med formeln för <a href="https://phpmetrics.github.io/website/metrics/?h=cyc#cyclomatic-complexity-number-and-weighted-method-count">cyclomatic complexity</a>.</h5>
+    <p>
+        I rapporten under object oriented metrics ser jag även att TwentyOneGame har skenat iväg i difficulty och ligger på 23.73.
+        Det är kanske inte så konstigt med tanke på att den är mest komplex av alla klasser i namespacet Card.
+        Den med nästhögst i namespacet Card är DeckOfCards och har en difficulty på 10.75.
+    </p>
+    <p>
+        En annan sak jag kan notera i rapporten är att mina controllers generellt hamnar ganska högt upp i komplexitet.
+        Nedan är en bild som är tagen när man sorterat på relativ system komplexitet. Återigen så kan vi se att TwentyOneGame sticker upp bland de klasserna som har mest complexity.
+    </p>
+    <img src="{{ asset('img/complexity.png') }}" alt="Topp fem klasser med högst relative system complexity.">
+    <h5>Topp fem klasser med högst relative system complexity.</h5>
+
+    <h2>Scrutinizer</h2>
+    <p>
+        I rapporten genererad av scrutinizer ser jag att jag totalt har tio issues i min kod. Av dessa tio issues så noterar jag att sju är från kod jag själv har skrivit.
+        Min coverage ligger på 31.9% och bör förbättras genom att göra fler tester på koden i src katalogen.
+        Jag kikar vidare i rapporten och ser att jag fått 9.96 av 10 poäng av scrutinizer, jag noterar att en metod har fått ett B i betyg.
+        Metoden är DeckOfCards construct så jag väljer att klicka in på den och kolla vad jag kan förbättra.
+        Jag ser att metoden har blivit gulmarkerad i conditions alltså måste jag sänka villkoren i metoden om jag vill uppnå ett A.
+    </p>
+    <img src="{{ asset('img/deckofcards-construct.png') }}" alt="Bild på betyg för deckofcards construct metoden.">
+    <h5>Scrutinizer visar tydligt vad som behöver förbättras.</h5>
+
+    <h2>Förbättringar</h2>
+    <p>
+        De förbättringar jag valt att implementera är: åtgärda issues skapade av mig, arbeta om DeckOfCards construct och öka coverage.
+    </p>
+    <p>
+        Anledningen till att jag väljer issues specifikt skapade av mig är för att de felen vet jag att jag kan åtgärda.
+        De resterande tre felen hör ihop med .php-csfixer.dist.php och src/Kernel.php. Självklart kommer jag kika på dessa med men fokus ligger på det jag skapat.
+        Ska jag vara helt ärlig så är DeckOfCards constructorn ett tydligt exempel på technical debt.
+        Nästan sedan jag skapade metoden så har jag haft en känsla av att något inte varit riktigt rätt med den. Men den har fungerat så jag har valt att arbeta vidare.
+        Jag valde code coverage främst för att jag vill prova på att skriva tester mot någon av mina controllers.
+    </p>
+
+    <h2>Diskussion</h2>
+    <p>
+
+    </p>
+
+{% endblock %}

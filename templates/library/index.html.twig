@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Library{% endblock %}
+
+{% block body %}
+    <h1>Library</h1>
+    <table class="table">
+        <thead>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN</th>
+            <th>Image</th>
+            <th>Tools</th>
+        </thead>
+        <tbody>
+            {% for book in books %}
+            <tr>
+                <td><a href="{{ path('book_show_specific', {'bookId':book.id}) }}">{{book.id}}</a></td>
+                <td>{{book.title}}</td>
+                <td>{{book.author}}</td>
+                <td class="number-cell">{{book.isbn}}</td>
+                {% if book.img != "" %}
+                <td><a href="{{book.img}}">book image</a></td>
+                {% else %}
+                <td>---</td>
+                {% endif %}
+                <td>
+                    <a class="form-tools" title="View" href="{{ path('book_show_specific', {'bookId':book.id}) }}">&#128065;</a>
+                    <a class="form-tools" title="Update" href="{{ path('book_update_get', {'bookId':book.id})}}">&#128393;</a>
+                    <a class="form-tools" title="Delete" href="{{ path('book_delete_get', {'bookId':book.id})}}">&#9249;</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a class="button" href="{{ path('create_book_landing')}}">Add book</a>
+{% endblock %}
