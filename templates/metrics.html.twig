@@ -100,6 +100,17 @@
     <img src="{{ asset('img/complexity.png') }}" alt="Topp fem klasser med högst relative system complexity.">
     <h5>Topp fem klasser med högst relative system complexity.</h5>
 
+    <p>
+        En annan sak som kan vara värd att nämna som man kan hitta i phpmetrics är maintainability index. Det presenteras som två bilder med massa cirklar som representerar klasserna.
+        Om cirklarna är röda så tyder det på att klassen är svårt att underhålla. I mitt fall såg det ut som nedan.
+    </p>
+    <div>
+        <img src="{{ asset('img/maintainability-comments.png') }}" alt="Underhållbarhet med kommentarer.">
+        <h5>Bildlig representation av maintainability med kommentarer.</h5>
+        <img src="{{ asset('img/maintainability-no-comments.png') }}" alt="Underhållbarhet utan kommentarer.">
+        <h5>Bildlig representation av maintainability utan kommentarer.</h5>
+    </div>
+
     <h2>Scrutinizer</h2>
     <p>
         I rapporten genererad av scrutinizer ser jag att jag totalt har tio issues i min kod. Av dessa tio issues så noterar jag att sju är från kod jag själv har skrivit.

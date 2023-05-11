@@ -13,7 +13,6 @@ class DeckOfCards
 
     public function __construct(string $cardClass = "graphic")
     {
-        $cardClass = strtolower($cardClass);
         $cardType = ["hearts", "spades", "diamonds", "clubs"];
         $cardName = [
             'two',
@@ -31,18 +30,18 @@ class DeckOfCards
             'ace',
         ];
 
-        switch ($cardClass) {
+        switch (strtolower($cardClass)) {
             case "graphic":
                 foreach ($cardType as $type) {
                     for ($i = 1; $i <= 13; $i++) {
-                        $this->deck[] = new CardGraphic($type, $cardName[$i-1], $i + 1);
+                        $this->deck[] = new CardGraphic($type, $cardName[$i - 1], $i + 1);
                     }
                 }
                 break;
             case "basic":
                 foreach ($cardType as $type) {
                     for ($i = 1; $i <= 13; $i++) {
-                        $this->deck[] = new Card($type, $cardName[$i-1], $i + 1);
+                        $this->deck[] = new Card($type, $cardName[$i - 1], $i + 1);
                     }
                 }
                 break;
