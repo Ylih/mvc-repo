@@ -6,6 +6,9 @@
     <h1>Metrics</h1>
 
     <h2>Introduktion</h2>
+    <img src="https://scrutinizer-ci.com/g/Ylih/mvc-repo/badges/quality-score.png?b=main" alt="Scrutinizer Code Quality">
+    <img src="https://scrutinizer-ci.com/g/Ylih/mvc-repo/badges/coverage.png?b=main" alt="Scrutinizer Code Coverage">
+    <img src="https://scrutinizer-ci.com/g/Ylih/mvc-repo/badges/build.png?b=main" alt="Scrutinizer Build Status">
     <p>
         Här kommer jag att gå igenom de sex C:na inom kodkvalitet. Sedan kommer jag att analysera rapporter av min kod från phpmetrics och scrutinizer.
         Slutligen går jag igenom några förbättringar av min kod och implementerar dem.
@@ -140,5 +143,12 @@
         När jag såg detta så pushade jag upp filerna på github vilket gav andra siffror på mina badges. När jag pushade dem skönk coverage till 24% men
         jag fick 9.97 av 10 istället för 9.96.
     </p>
+    <p>
+        Jag insåg ganska snabbt att jag inte kan göra så mycket åt constructorn utan att ändra i resterande kod. Det jag gjort för att få den mindre komplex
+        är att använda mig av en switch för varje typ av Card klass och att default kastar ett exception.
+        Detta ökade läsbarheten något och sänkte komplexiteten från 8 till 7.
+    </p>
+    <img src="{{ asset('img/new-DoC-construct.png') }}" alt="Bild på betyg för deckofcards construct metoden.">
+    <h5>En uppdaterad DeckOfCards constructor</h5>
 
 {% endblock %}
