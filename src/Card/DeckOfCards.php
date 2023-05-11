@@ -31,25 +31,23 @@ class DeckOfCards
             'ace',
         ];
 
-        $flag = false;
-
-        if ($cardClass === "graphic") {
-            foreach ($cardType as $type) {
-                for ($i = 1; $i <= 13; $i++) {
-                    $this->deck[] = new CardGraphic($type, $cardName[$i-1], $i + 1);
+        switch ($cardClass) {
+            case "graphic":
+                foreach ($cardType as $type) {
+                    for ($i = 1; $i <= 13; $i++) {
+                        $this->deck[] = new CardGraphic($type, $cardName[$i-1], $i + 1);
+                    }
                 }
-            }
-            $flag = true;
-        } elseif ($cardClass === "basic") {
-            foreach ($cardType as $type) {
-                for ($i = 1; $i <= 13; $i++) {
-                    $this->deck[] = new Card($type, $cardName[$i-1], $i + 1);
+                break;
+            case "basic":
+                foreach ($cardType as $type) {
+                    for ($i = 1; $i <= 13; $i++) {
+                        $this->deck[] = new Card($type, $cardName[$i-1], $i + 1);
+                    }
                 }
-            }
-            $flag = true;
-        }
-        if (!$flag) {
-            throw new Exception("That type of card does not exist.");
+                break;
+            default:
+                throw new Exception("That type of card does not exist.");
         }
     }
 
