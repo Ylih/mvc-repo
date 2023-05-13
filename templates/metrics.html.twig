@@ -6,9 +6,6 @@
     <h1>Metrics</h1>
 
     <h2>Introduktion</h2>
-    <img src="https://scrutinizer-ci.com/g/Ylih/mvc-repo/badges/quality-score.png?b=main" alt="Scrutinizer Code Quality">
-    <img src="https://scrutinizer-ci.com/g/Ylih/mvc-repo/badges/coverage.png?b=main" alt="Scrutinizer Code Coverage">
-    <img src="https://scrutinizer-ci.com/g/Ylih/mvc-repo/badges/build.png?b=main" alt="Scrutinizer Build Status">
     <p>
         Här kommer jag att gå igenom de sex C:na inom kodkvalitet. Sedan kommer jag att analysera rapporter av min kod från phpmetrics och scrutinizer.
         Slutligen går jag igenom några förbättringar av min kod och implementerar dem.
@@ -104,7 +101,7 @@
     <h5>Topp fem klasser med högst relative system complexity.</h5>
 
     <p>
-        En annan sak som kan vara värd att nämna som man kan hitta i phpmetrics är maintainability index. Det presenteras som två bilder med massa cirklar som representerar klasserna.
+        En annan svaghet som kan vara värd att nämna som man kan hitta i phpmetrics är maintainability index. Det presenteras som två bilder med massa cirklar som representerar klasserna.
         Om cirklarna är röda så tyder det på att klassen är svårt att underhålla. I mitt fall såg det ut som nedan.
     </p>
     <div>
@@ -115,6 +112,17 @@
     </div>
 
     <h2>Scrutinizer</h2>
+
+    <a class="badge" href="https://scrutinizer-ci.com/g/Ylih/mvc-repo/?branch=main">
+        <img src="https://scrutinizer-ci.com/g/Ylih/mvc-repo/badges/quality-score.png?b=main" alt="Scrutinizer Code Quality">
+    </a>
+    <a class="badge" href="https://scrutinizer-ci.com/g/Ylih/mvc-repo/?branch=main">
+        <img src="https://scrutinizer-ci.com/g/Ylih/mvc-repo/badges/coverage.png?b=main" alt="Scrutinizer Code Coverage">
+    </a>
+    <a class="badge" href="https://scrutinizer-ci.com/g/Ylih/mvc-repo/build-status/main">
+        <img src="https://scrutinizer-ci.com/g/Ylih/mvc-repo/badges/build.png?b=main" alt="Scrutinizer Build Status">
+    </a>
+
     <p>
         I rapporten genererad av scrutinizer ser jag att jag totalt har tio issues i min kod. Av dessa tio issues så noterar jag att sju är från kod jag själv har skrivit.
         Min coverage ligger på 31.9% och bör förbättras genom att göra fler tester på koden i src katalogen.
@@ -127,22 +135,23 @@
 
     <h2>Förbättringar</h2>
     <p>
-        De förbättringar jag valt att implementera är: åtgärda issues skapade av mig, arbeta om DeckOfCards construct och öka coverage.
+        De förbättringar jag valt att försöka implementera är: åtgärda issues skapade av mig, arbeta om DeckOfCards construct och öka coverage.
     </p>
     <p>
         Anledningen till att jag väljer issues specifikt skapade av mig är för att de felen vet jag att jag kan åtgärda.
         De resterande tre felen hör ihop med .php-csfixer.dist.php och src/Kernel.php. Självklart kommer jag kika på dessa med men fokus ligger på det jag skapat.
         Ska jag vara helt ärlig så är DeckOfCards constructorn ett tydligt exempel på technical debt.
         Nästan sedan jag skapade metoden så har jag haft en känsla av att något inte varit riktigt rätt med den. Men den har fungerat så jag har valt att arbeta vidare.
-        Jag valde code coverage främst för att jag vill prova på att skriva tester mot någon av mina controllers.
+        För att öka coverage ska jag skriva tester för entity klasserna och dice klasserna.
     </p>
-
-    <h2>Diskussion</h2>
     <p>
         När jag började fixa mina issues så märkte jag att det saknades filer i mitt github repo. Jag hade bara gjort commit och glömt att göra git add på dem.
-        När jag såg detta så pushade jag upp filerna på github vilket gav andra siffror på mina badges. När jag pushade dem skönk coverage till 24% men
+        När jag såg detta så pushade jag upp filerna på github vilket gav andra siffror på mina badges. När jag pushade dem sjönk coverage till 24% men
         jag fick 9.97 av 10 istället för 9.96.
     </p>
+    <img src="{{ asset('img/proof-of-drop.png') }}" alt="Bild på betyg efter saknade filer.">
+    <h5>Bild på betyg efter saknade filer.</h5>
+
     <p>
         Jag insåg ganska snabbt att jag inte kan göra så mycket åt constructorn utan att ändra i resterande kod. Det jag gjort för att få den mindre komplex
         är att använda mig av en switch för varje typ av Card klass och att default kastar ett exception.
@@ -150,5 +159,30 @@
     </p>
     <img src="{{ asset('img/new-DoC-construct.png') }}" alt="Bild på betyg för deckofcards construct metoden.">
     <h5>En uppdaterad DeckOfCards constructor</h5>
+
+    <p>
+        Jag lyckades fixa 7 av 10 issues, förbättra DeckOfCards construct lite grann och lyckas höja upp code coverage till 32% från 24%.
+        Jag försökte göra tester för controller klasserna men lyckades inte. Efter att jag gjort dessa förbättringar så fick jag en ytterst liten minskning i complexity och avg bug per class.
+    </p>
+    <img src="{{ asset('img/avg-complexity-after-improvements.png') }}" alt="Bild på betyg från phpmetrics.">
+    <h5>Del av phpmetrics rapport</h5>
+    <img src="{{ asset('img/avg-bugs-after-improvement.png') }}" alt="Bild på betyg från phpmetrics.">
+    <h5>Del av phpmetrics rapport</h5>
+
+    <h2>Diskussion</h2>
+    <p>
+        Att arbeta igenom sin kod och försöka identifiera flaskhalsar och förbättringsmöjligheter är ett av många sätt att arbeta mot "clean code".
+        Det finns självklart fördelar och nackdelar med allt man gör. I detta fall så är fördelarna att man kan visa upp att man minsann har testat
+        och i någon mån kvalitetssäkrat sin produkt. Man kan även identifiera fel innan de når produktion vilket kan spara tid och pengar i framtiden. De två främsta nackdelar
+        som jag märkte medan jag arbetade med detta var: det kan ta väldigt lång tid att få en liten förbättring på papper
+        och även fast man har hög coverage så betyder det inte att man har bra tester.
+    </p>
+    <p>
+        Det finns saker man kan och bör tänka på för att arbeta mot "clean code" medan man skriver kod.
+        Exempelvis bör man ha tydliga variabelnamn för att göra koden mer begriplig, det samma gäller för funktionsnamn.
+        Man bör också tänka på att använda kodprinciper som DRY och inom objektorienterad programmering även tänka på SRP.
+        Sen är det självklart fördelaktigt att kommentera den kod man skriver, om inte för en själv så för andra som ska läsa din kod.
+        Det sistnämnda är något jag väldigt sällan gör och måste öva mer på om jag vill sträva efter mer "clean code".
+    </p>
 
 {% endblock %}
