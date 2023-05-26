@@ -1,0 +1,29 @@
+{% extends "proj-base.html.twig" %}
+
+{% block title %}Blackjack{% endblock %}
+
+{% block body %}
+<div class="gameboard">
+    <div class="bank">
+        <h2>Bank</h2>
+        <div class="card-placement">
+        </div>
+    </div>
+
+    <div class="player-bet-container">
+        <form class="flex-col" method="post" action="{{ path('set_blackjack_board') }}">
+            <div class="player-bet" >
+                {% for hand in player_hands %}
+                    <div class="bet-box">
+                        <div class="card-placement">
+                        </div>
+                        <input type="number" name="hand_{{loop.index}}" min="10" max="50" value="10" step="10" required>
+                    </div>
+                {% endfor %}
+            </div>
+            <input class="button" type="submit" value="Place bets">
+        </form>
+        <h2>Player balance: {{player_balance}}$</h2>
+    </div>
+</div>
+{% endblock %}

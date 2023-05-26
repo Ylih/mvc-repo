@@ -1,0 +1,50 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: $base-line-height;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $header-color;
+    font-family: $header-font;
+    margin-bottom: $magic-number;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: $magic-number * 2;
+    border-bottom: 4px double $header-color;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+p,
+a,
+blockquote {
+    color: $text-color;
+    font-size: $base-font-size;
+    margin-bottom: $magic-number;
+}
+
+a:hover {
+    text-decoration: none;
+    color:red;
+}
+
+.no-decoration {
+    text-decoration: none;
+}

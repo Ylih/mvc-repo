@@ -1,0 +1,25 @@
+{% extends "proj-base.html.twig" %}
+
+{% block title %}Start Game!{% endblock %}
+
+{% block body %}
+    <h1>Black Jack</h1>
+    <p>
+        Enter your name, how many hands you would like to play and how much money you would like to lose.
+        The money is in $.
+    </p>
+
+    <form method="post" action="">
+        <label class="input-label" for="player_name">Name</label>
+        <input class="input" type="text" name="player_name" placeholder="Example: John Doe" required>
+
+        <label class="input-label" for="num_hands">Hands</label>
+        <input class="input" type="number" name="num_hands" min="1" max="3" value="1" required>
+
+        <label class="input-label" for="player_credit">Money</label>
+        <input class="input" type="number" name="player_credit" min="150" max="5000" value="150" step="50" required>
+
+        <input class="button" type="submit" name="do_it" value="Start">
+    </form>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="{{ asset('img/me.png') }}">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('proj') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('proj') }}
+        {% endblock %}
+    </head>
+    <body>
+        <header class="site-header">
+            <nav>
+                <ul>
+                    <li><a href="{{ path('project') }}">Casino</a></li>
+                    <li><a href="{{ path('project_about') }}">About</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main">
+            {% block body %}{% endblock %}
+        </main>
+        <footer>
+            <p>&copy; Jesper Yli-Hukka</p>
+        </footer>
+    </body>
+</html>

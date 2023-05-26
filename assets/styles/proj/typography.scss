@@ -21,7 +21,6 @@ h6 {
 h1 {
     font-size: 3em;
     margin-bottom: $magic-number * 2;
-    border-bottom: 4px double $header-color;
 }
 
 h2 {
@@ -40,11 +39,20 @@ blockquote {
     margin-bottom: $magic-number;
 }
 
+label {
+    color: $text-color;
+    font-size: $base-font-size;
+}
+
 a:hover {
     text-decoration: none;
     color:red;
 }
 
-.badge {
+.no-decoration {
     text-decoration: none;
+}
+
+.no-bot-margin {
+    margin-bottom: 0;
 }

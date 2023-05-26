@@ -1,0 +1,32 @@
+.site-header {
+    display: flex;
+    justify-content: center;
+    background-color: $background-color;
+}
+
+header {
+    border-bottom: 1px solid $header-color;
+    margin-bottom: $magic-number * 2;
+}
+
+nav {
+    margin: calc($magic-number / 2) 0;
+    ul {
+        display: flex;
+        justify-content: flex-end;
+        list-style-type: none;
+    
+        li {
+            margin-right: 1em;
+
+            a {
+                font-weight: 600;
+                font-size: 1.5em;
+                font-family: $header-font;
+                color: $header-color;
+            }
+        }
+    }
+}
+
+

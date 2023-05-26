@@ -1,0 +1,42 @@
+.flash-notice {
+    padding: 0.5em;
+    color: #004085;
+    background-color: #cce5ff;
+    border-color: #b8daff;
+}
+
+.flash-notice:before {
+    content: "ⓘ";
+}
+
+.flash-warning {
+    padding: 0.5em;
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+
+.flash-warning:before {
+    content: "⚠";
+}
+
+.flash-winner {
+    text-align: center;
+    font-size: xx-large;
+    font-family: $header-font;
+    font-weight: 600;
+    margin-bottom: $magic-number;
+    padding: 0.5em;
+    color: #ffffff;
+    background-color: #1b7527;
+    border-color: #045001;
+    border-radius: 0.5rem;
+}
+
+.flash-winner:before {
+    content: "♕";
+}
+
+.flash-winner:after {
+    content: "♕";
+}

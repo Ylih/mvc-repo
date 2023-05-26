@@ -1,0 +1,28 @@
+form {
+    margin-bottom: $magic-number;
+}
+
+.input {
+    font-size: $base-font-size;
+    font-family: $text-font;
+    display: block;
+    border: 1px solid darken($header-color, 10%);
+    border-radius: 0.2rem;
+    padding: 0.6rem;
+    width: 32rem;
+    margin-bottom: $magic-number;
+}
+
+.input-label {
+    font-weight: 600;
+    margin: $magic-number 0 0;
+    display: block;
+}
+
+.input-label::after {
+    content: ":";
+}
+
+.form-tools {
+    font-family: sans-serif;
+}

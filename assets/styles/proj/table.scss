@@ -1,0 +1,30 @@
+.table {
+    box-sizing: border-box;
+    max-width: 100%;
+    display: block;
+    overflow-x: auto;
+    border-collapse: collapse;
+    font-size: $base-font-size;
+    margin-bottom: $magic-number;
+
+    th {
+        text-align: left;
+        font-family: $header-font;
+        color: $header-color;
+    }
+
+    td {
+        border-top: 1px solid $header-color;
+        font-family: $text-font;
+    }
+
+    th,
+    td {
+        white-space: nowrap;
+        padding: 0.2rem 0.8rem;
+    }
+
+    .number-cell {
+        text-align: right;
+    }
+}

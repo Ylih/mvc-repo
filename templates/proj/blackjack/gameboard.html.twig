@@ -1,0 +1,58 @@
+{% extends "proj-base.html.twig" %}
+
+{% block title %}Blackjack{% endblock %}
+
+{% block body %}
+<div class="gameboard">
+    {{ include('flash.html.twig') }}
+    <div class="bank">
+        <h2>Bank</h2>
+        <div class="bet-box">
+            <div class="card-placement">
+            {% for card in bank_hand %}
+                <div class="card-container {{card}}"></div>
+            {% endfor %}
+            </div>
+            <h3>{{bank_sum}}</h3>
+        </div>
+    </div>
+
+    <div class="player">
+        <div class="player-play" >
+            {% for hand in player_hands %}
+                <div class="bet-box">
+                    <h3 class="{{hand.status|lower}}">{{hand.status}}</h3>
+                    <div class="{% if current == loop.index %} current {% endif %} card-placement">
+                        {% for card in hand.values %}
+                            <div class="card-container {{card}}"></div>
+                        {% endfor %}
+                    </div>
+                    <h3>{{hand.sum}}</h3>
+                    <h4>Bet: {{hand.stake}}$</h4>
+                </div>
+            {% endfor %}
+        </div>
+        <h2>Cards in deck: {{deck}}</h2>
+        <div class="player-controller">
+            <h4>Name: {{player_name}}</h4>
+            <h4>Balance: {{player_money}}$</h4>
+            {% if gameover == false %}
+            <form method="post" action="">
+                <input class="button" type="submit" name="hit" value="Hit" onClick="this.form.action='{{ path('blackjack_hit') }}';">
+                <input class="button" type="submit" name="stand" value="Stand" onClick="this.form.action='{{ path('blackjack_stand') }}';">
+            </form>
+            {% else %}
+            <form method="get" action="">
+                {% if money_status.sameBet %}
+                <input class="button" type="submit" name="again" value="New round" onClick="this.form.action='{{ path('blackjack_new_round') }}';">
+                {% endif %}
+                {% if money_status.minBet %}
+                <input class="button" type="submit" name="bets" value="New bets" onClick="this.form.action='{{ path('blackjack_new_bets') }}';">
+                {% endif %}
+                <input class="button" type="submit" name="restart" value="Restart" onClick="this.form.action='{{ path('blackjack_init_get') }}';">
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

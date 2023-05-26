@@ -1,0 +1,9 @@
+footer {
+    text-align: center;
+    border-top: 1px solid $header-color;
+    background-color: $background-color;
+
+    p {
+        margin-bottom: calc($magic-number / 2);
+    }
+}

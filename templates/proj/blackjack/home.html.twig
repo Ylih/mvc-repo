@@ -1,0 +1,22 @@
+{% extends "proj-base.html.twig" %}
+
+{% block title %}Start Game{% endblock %}
+
+{% block body %}
+    <h1>Black Jack</h1>
+
+    <h2>Rules</h2>
+    <p>
+        The goal in Black Jack is to reach as close to 21 points as possible. The player places a bet and are then given two cards.
+        The player can then choose to draw a card (hit) or to stop (stand). When the player decides to stand the bank plays its turn. 
+        If the players score exceeds 21 points, they automatically lose. If it is a tie the bet is returned to the player.
+    </p>
+
+    <h3>Points</h3>
+    <p>
+    Aces can be worth either 1 or 11 this is decided in the favor of the player. Named cards such as Jack, Queen and King are worth 10
+    while the remaining cards are worth their respective numbers.
+    </p>
+
+    <a href="{{ path('blackjack_init_get')}}" class="button">PLAY</a>
+{% endblock %}

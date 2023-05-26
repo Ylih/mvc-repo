@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: radial-gradient(ellipse farthest-corner at center,#2e2f68
+    ,#0b174c);
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body main {
+    align-self: center; //Centers main.
+}
+
+.main {
+    flex: 1; //forces footer to the bottom of the screen.
+    max-width: 75rem;
+
+    padding: 1em 1.5em;
+    margin-bottom: $magic-number * 2;
+}
+
+.game-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+}
+
+.game-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.20);
+    backdrop-filter: blur(5px);
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    text-decoration: none;
+}
+
+.game-box:hover {
+    background: orange;
+}
+
+.disabled {
+    background-color: rgba(129, 129, 129, 0.20);
+    color: #ccc;
+    pointer-events: none;
+}
+
+
+.gameboard {
+    width: 60rem;
+    min-height: 40rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h2 {
+        margin-bottom: 0;
+    }
+
+    form {
+        align-self: center;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+blockquote {
+    margin: 0 1.5rem $magic-number 1.5rem;
+}
+
+.half-width {
+    width: 50%;
+}
+
+.quarter-width {
+    width: 25%;
+}
+
+.expander {
+    width: 50rem;
+}

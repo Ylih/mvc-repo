@@ -1,0 +1,54 @@
+{% extends "proj-base.html.twig" %}
+
+{% block title %}Project{% endblock %}
+
+{% block body %}
+    <h1>Casino</h1>
+    <div class="game-container">
+        <a class="no-decoration no-bot-margin" href="{{ path('blackjack_start') }}">
+            <div class="game-box">
+                <h2>
+                    Black Jack
+                </h2>
+            </div>
+        </a>
+
+        <a class="no-decoration no-bot-margin" href="{{ path('game_start') }}">
+            <div class="game-box">
+                <h2>
+                    21
+                </h2>
+            </div>
+        </a>
+        <div class="game-box disabled">
+            <h3>
+                TBD
+            </h3>
+        </div>
+        <div class="game-box disabled">
+            <h3>
+                TBD
+            </h3>
+        </div>
+        <div class="game-box disabled">
+            <h3>
+                TBD
+            </h3>
+        </div>
+        <div class="game-box disabled">
+            <h3>
+                TBD
+            </h3>
+        </div>
+        <div class="game-box disabled">
+            <h3>
+                TBD
+            </h3>
+        </div>
+        <div class="game-box disabled">
+            <h3>
+                TBD
+            </h3>
+        </div>
+    </div>
+{% endblock %}
