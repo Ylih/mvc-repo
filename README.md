@@ -19,8 +19,8 @@ Start by standing in the directory where you want the repo to go.
 Then use the command: git clone https://github.com/Ylih/mvc-repo
 
 Move to the repo directory and use the following commands:
-composer install
-npm install
-npm run build
+- composer install
+- npm install
+- npm run build
 
 Then you should be good to go!
