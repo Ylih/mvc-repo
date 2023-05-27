@@ -56,6 +56,7 @@ class Card
 
     /**
      * set the int of $value
+     * @param int $value the value to be set
      * @return void
      */
     public function setValue(int $value): void

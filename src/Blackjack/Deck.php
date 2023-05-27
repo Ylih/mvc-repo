@@ -4,11 +4,21 @@ namespace App\Blackjack;
 
 use Exception;
 
+/** @author Jesper Yli-Hukka Högback */
+
+/**
+ * The Deck class is meant to act as a deck of cards in a card game.
+ * The function of this class is to hold an array of card objects.
+ */
 class Deck
 {
     /** @var Card[] */
     protected array $deck = [];
 
+    /**
+     * instantiate and add 52 Card objects to the $deck array.
+     * @return void
+     */
     public function createNormalDeck(): void
     {
         $cardType = ["hearts", "spades", "diamonds", "clubs"];
@@ -36,6 +46,7 @@ class Deck
     }
 
     /**
+     * get the $deck array holding the cards.
      * @return Card[]
      */
     public function getDeck(): array
@@ -43,11 +54,19 @@ class Deck
         return $this->deck;
     }
 
+    /**
+     * shuffle the array of cards.
+     * @return void
+     */
     public function shuffle(): void
     {
         shuffle($this->deck);
     }
 
+    /**
+     * uses array_pop to "draw" the last card in the $deck array.
+     * @return Card
+     */
     public function draw(): Card
     {
         if (empty($this->deck)) {
@@ -59,6 +78,8 @@ class Deck
     }
 
     /**
+     * draw mutliple cards from $deck array.
+     * @param int $times number of times to draw
      * @return array<int,Card> $cards
      */
     public function drawMultiple(int $times): array
@@ -77,12 +98,17 @@ class Deck
         return $cards;
     }
 
+    /**
+     * get the number of cards in the $deck array.
+     * @return int
+     */
     public function getNumberCards(): int
     {
         return count($this->deck);
     }
 
     /**
+     * get the result of each Card object getAsString in an array.
      * @return string[]
      */
     public function getString(): array
@@ -95,6 +121,7 @@ class Deck
     }
 
     /**
+     * get the result of each Card object getAsArray in an array.
      * @return array<int,array{type: string, name: string, value: int}>
      */
     public function getArray(): array

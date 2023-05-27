@@ -5,7 +5,7 @@ namespace App\Blackjack;
 /** @author Jesper Yli-Hukka Högback */
 
 /**
- * The CardHand class is meant to act as a hand in a card game.
+ * The Hand class is meant to act as a hand in a card game.
  * The function of this class is to hold multiple Card objects.
  */
 class Hand
@@ -67,6 +67,7 @@ class Hand
 
     /**
      * Set stake of hand.
+     * @param int $stake the stake of hand
      * @return void
      */
     public function setStake(int $stake): void
@@ -85,6 +86,7 @@ class Hand
 
     /**
      * Set status of hand.
+     * @param string $status the status to set
      * @return void
      */
     public function setStatus(string $status): void
@@ -149,6 +151,7 @@ class Hand
     }
 
     /**
+     * get string names of each card in hand in an array, the stake of the hand and the status of the hand.
      * @return array{values: array<int, string>, stake: int, sum: int, status: string}>
      */
     public function getAssociative(): array
@@ -177,6 +180,10 @@ class Hand
         return $values;
     }
 
+    /**
+     * see if hand contains an ace and if it has not yet been handled (set to 1)
+     * @return bool
+     */
     public function containsAce(): bool
     {
         foreach ($this->hand as $card) {
@@ -187,6 +194,10 @@ class Hand
         return false;
     }
 
+    /**
+     * set value of ace to 1.
+     * @return void
+     */
     public function handleAce(): void
     {
         foreach ($this->hand as $card) {
