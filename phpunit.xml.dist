@@ -20,6 +20,8 @@
       <directory suffix=".php">src/Repository</directory>
       <file>src/Controller/DiceGameController.php</file>
       <file>src/Controller/ProductController.php</file>
+      <file>src/Controller/ReportControllerTwig.php</file>
+      <file>src/Controller/ProjectControllerTwig.php</file>
       <file>src/Kernel.php</file>
     </exclude>
   </source>
