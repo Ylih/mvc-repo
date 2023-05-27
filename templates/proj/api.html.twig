@@ -1,0 +1,22 @@
+{% extends "proj-base.html.twig" %}
+
+{% block title %}API Page{% endblock %}
+
+{% block body %}
+    <h1>API Page</h1>
+    <p>
+        This page is meant to display how the games data looks like throughout the routes. "Show Game" is to display the current active blackjack game in the casino.
+        If you want to see what happens throughout the game start by displaying the data of "Start A Game" then work your way down to see how the data changes between each route.
+    </p>
+    <p>
+        If you decide to play a proper game in these routes use the "End Game" route if "gameOver" is flagged as true or if "currentHand" is less than 0.
+    </p>
+    <form method="post" action="">
+        <input class="button block" type="submit" name="do_it" value="Show Game" onClick="this.form.action='{{ path('api_blackjack_game') }}';">
+        <input class="button block" type="submit" name="do_it" value="Start A Game" onClick="this.form.action='{{ path('api_blackjack_start') }}';">
+        <input class="button block" type="submit" name="do_it" value="Deal Cards" onClick="this.form.action='{{ path('api_blackjack_deal') }}';">
+        <input class="button block" type="submit" name="do_it" value="Hit" onClick="this.form.action='{{ path('api_blackjack_hit') }}';">
+        <input class="button block" type="submit" name="do_it" value="Stand" onClick="this.form.action='{{ path('api_blackjack_stand') }}';">
+        <input class="button block" type="submit" name="do_it" value="End Game" onClick="this.form.action='{{ path('api_blackjack_end') }}';">
+    </form>
+{% endblock %}

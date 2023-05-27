@@ -18,7 +18,7 @@ class BlackjackGameTest extends TestCase
         $bank = $game->getBank();
         $player = $game->getPlayer();
         $deck = $game->getDeck();
-        $gameOver = $game->getGameOver();
+        $gameOver = $game->isGameOver();
 
         $this->assertInstanceOf("\App\Blackjack\BlackjackGame", $game);
         $this->assertInstanceOf("\App\Blackjack\Hand", $bank);
@@ -45,7 +45,7 @@ class BlackjackGameTest extends TestCase
         $bank = $game->getBank();
         $player = $game->getPlayer();
         $deck = $game->getDeck();
-        $gameOver = $game->getGameOver();
+        $gameOver = $game->isGameOver();
 
         $this->assertEmpty($bank->getHand());
         $this->assertEmpty($player->getHands());
@@ -79,7 +79,7 @@ class BlackjackGameTest extends TestCase
         $bank = $game->getBank();
         $player = $game->getPlayer();
         $deck = $game->getDeck();
-        $gameOver = $game->getGameOver();
+        $gameOver = $game->isGameOver();
 
         $this->assertCount(3, $bank->getHand());
         $this->assertContainsOnlyInstancesOf("\App\Blackjack\Card", $bank->getHand());

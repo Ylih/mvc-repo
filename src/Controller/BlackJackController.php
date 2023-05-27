@@ -102,7 +102,7 @@ class BlackJackController extends AbstractController
             "bank_hand" => $game->getBank()->getString(),
             "bank_sum" => $game->getBank()->getSum(),
             "deck" => $game->getDeck()->getNumberCards(),
-            "gameover" => $game->getGameOver(),
+            "gameover" => $game->isGameOver(),
             "money_status" => $game->getPlayer()->getMoneyStatus(),
         ];
 

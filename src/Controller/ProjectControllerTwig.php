@@ -19,4 +19,10 @@ class ProjectControllerTwig extends AbstractController
     {
         return $this->render('proj/about.html.twig');
     }
+
+    #[Route("/proj/api", name: "project_api")]
+    public function api(): Response
+    {
+        return $this->render('proj/api.html.twig');
+    }
 }
