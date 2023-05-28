@@ -11,7 +11,7 @@
         <p>
             När det kommer till objektorientering så skulle jag vilja påstå att jag har en ganska god förståelse kring grunden.
             Detta då jag precis läst kursen algoritmer och datastrukturer med objektorienterad Python (OOP). Kursen tog upp mycket kring objektorienterad programmering och vad det innebär.
-            Trotts att kurserna skiljer sig i val av programmeringsspråk så tänker jag att principen är den samma eller åtminstone liknande.
+            Trots att kurserna skiljer sig i val av programmeringsspråk så tänker jag att principen är den samma eller åtminstone liknande.
             Utöver OOP så har jag inte några tidigare erfarenheter som är värda att nämna.
         </p>
 
@@ -291,9 +291,89 @@
         </p>
 
         <h2 id="kmom07">Kursmoment 07-10</h2>
-        <h3>PH QUESTION</h3>
+        <h3>Krav 1-3</h3>
+        <h4>Grunden</h4>
         <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, nihil!
+            Jag började med att välja fokus för projektet där jag velade mellan blackjack och hållbarhet men till slut valde jag blackjack.
+            Efter att jag gjort mitt val så skapade jag en länk i min navbar och sedan satte jag igång.
+            Jag skapade en controller för mina landningssidor för projektet och skapade sedan en directory för mina templates.
+            Jag läste igenom kraven och såg att jag behövde ändra stil på min sida.
+            Jag la till en entry i min webpack.config.js som vi tidigare gjort med assets/app.js, den fick heta proj.js.
+            Jag skapade styles/proj och kopierade sedan styles/app och rensade ur lite css som inte behövdes.
+            Efter detta la jag till min about sida och skrev lite kort om projektet.
+        </p>
+        <h4>Blackjack</h4>
+        <p>
+            Jag började med att piffa till min landningssida för projektet. Målet var att efterlikna ett casino där spelen man kan välja mellan ser ut som brickor.
+            Efter att jag fått till en bra grund gick jag vidare till att skapa en landningssida för blackjack spelet. Landningssidan förklarar reglerna och hur poängen räknas ut.
+            När man trycker på play kommer man till en sida där man får skriva in sitt namn, antalet händer man vill spela och hur mycket pengar man vill gå in med.
+            Då man har fyllt i formuläret och tryckt på start så kommer man till en tom spelplan där man väljer insats för varje hand. När man har placerat sina insatser så delas korten ut.
+            Därefter kan man välja mellan "Hit" och "Stand" fram till att alla händer är spelade. Slutligen när alla händer har blivit spelade så drar banken sin hand,
+            händerna kontrolleras mot bankens och pengar delas ut/eller inte. Då rundan är över kan man välja att placera nya insatser, spela med samma insats igen eller starta ett nytt spel.
+
+        </p>
+        <h4>Repo och dokumentation</h4>
+        <p>
+            I min README.md så fanns klickbara badges sedan tidigare. Jag la till en kort beskrivning av innehållet i repot och varför det finns.
+            Slutligen la jag till instruktioner kring hur man klonar repot. Jag provade själv att göra detta med en annan dator och då stötte jag på en del fel.
+            Både PHP och composer var utdaterade vilket resulterade i att jag inte kunde starta igång det klonade repot. Jag nämnde detta i en blockquote direkt under
+            rubriken "clone repo".
+        </p>
+        <p>
+            Jag skrev tester för alla mina klasser i src/Blackjack/ sedan exkluderade jag några filer som hade med övningar och göra samt två controllers som enbart hanterar
+            landningssidor. Sedan kommenterade jag all min kod i src/Blackjack/ och genererade dokumentation och metrics med composer phpdoc och composer phpmetrics.
+        </p>
+        <h3>Krav 4</h3>
+        <p>
+            Jag valde att lägga till ett JSON API för mitt spel. Tanken bakom API:et var att man skulle kunna se spelets data uppdateras genom hela spelets gång.
+            Jag valde även att lägga till "Show Game" vilket är en egen route för att visa det aktiva spelet från casinot.
+        </p>
+        <p>
+            "Start A Game" initierar ett tomt spel och lägger till namn, pengar och två tomma händer till spelaren. Sedan läggs korten till i kortleken och kortleken blandas.
+        </p>
+        <p>
+            "Deal Cards" tar emot förvalda insatser och delar ut två kort till varje hand spelaren har sedan ett kort till banken.
+            Efter det kontrolleras alla spelarens händer efter blackjacks och sedan hämtas nästa spelbara hand.
+        </p>
+        <p>
+            "Hit" börjar med att hämta den aktiva handen och sedan drar den ett kort från kortleken och lägger till i handen.
+            Slutligen kontrolleras handen och nästa spelbara hand hämtas.
+        </p>
+        <p>
+            "Stand" hämtar den aktiva handen och sätter den till spelad samt uppdaterar status texten till "Stand".
+            Sedan hämtas den nästa spelbara handen.
+        </p>
+        <p>
+            "End Game" drar kort till banken och jämför bankens hand mot spelarens händer.
+            Om spelaren vinner en hand så ökas spelarens pengar med insatsen x 2.
+            Om spelaren vinner med en blackjack så är det insatsen x 2.5 och om det är oavgjort får spelaren tillbaka insatsen.
+        </p>
+        <p>
+            Som tidigare nämnt så är tanken bakom API:et att man ska kunna se flödet av datan.
+        </p>
+        <h3>Allmänt om projektet</h3>
+        <p>
+            För min del tog projektet längre tid än väntat. Jag valde att skriva om klasserna i src/Card/ för mitt blackjack spel då jag ville förbättra delar av dem.
+            Ett exempel på detta var att ta bort constructorn för Deck och sedan skapa en metod för att fylla arrayen som deck klassen håller. Ett annat exempel var att
+            ta bort css klasser ur min string på Card->getAsString() då det inte har något alls med kortet att göra.
+            Nu i efterhand så ångrar jag mitt val av kortspel. Jag hade nog haft mer glädje i uppgiften om jag valde något av de andra kortspelen.
+            Jag tror detta beror på att 21 och Blackjack är väldigt lika så det kändes bara som att jag vidareutvecklade/arbetade om min gamla kod.
+            Trots att de är så pass lika så stötte jag ändå på en del bekymmer under uppgiftens gång.
+            Att lägga till flera hand objekt ökade komplexiteten då man måste tänka kring hur man byter hand, vad som händer när en eller flera händer får blackjack (21 vid giv),
+            hur man ska hantera insatserna och hur de är relaterade till spelarens pengar. Men även andra funderingar som
+            "Vad händer när rundan är över?", "Ska spelaren kunna lägga samma insatser igen?", "Vad händer om inte spelaren har råd?".
+        </p>
+        <h3>Feedback</h3>
+        <p>
+            Jag vill börja med att säga att jag upplever att handledningen har varit bra. Jag uppskattar även att de videos som läggs upp på youtube är uppdelade i fler delar.
+            Det är några få saker jag inte har varit helt nöjd med i denna kurs.
+            Vid några tillfällen så har inte materialet för veckan varit helt klart på måndagar när man vill påbörja kursmomentet för veckan.
+            En annan sak är omnämningen av "90% kodtäckning" när det kommer till coverage. Mitt förslag till nästa gång denna kurs hålls är att antingen fundera kring
+            om man kanske bör lägga till "i klasserna" eller lära ut hur man skriver tester för controllers. Alternativt ge fler exempel på hur man minskar sina controllers.
+            Utöver detta så tycker jag att materialet har varit bra och man har lärt sig mycket inom en kort tidsram.
+        </p>
+        <p>
+            De delar jag personligen tyckt om mest har varit kursmoment: 02, 03 och 05. Ska jag ge kursen ett betyg så skulle den nog få 6/10.
         </p>
     </div>
     <div class="two-col-sec">
