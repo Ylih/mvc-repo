@@ -17,7 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class CardGameControllerJson extends AbstractController
 {
-    #[Route("proj/api/game", name: "api_blackjack_game", methods: ["POST"])]
+    #[Route("/proj/api/game", name: "api_blackjack_game", methods: ["POST"])]
     public function blackjackGameJson(SessionInterface $session): Response
     {
         /** @var \App\Blackjack\BlackjackGame|null $game */
@@ -49,7 +49,7 @@ class CardGameControllerJson extends AbstractController
         return $response;
     }
 
-    #[Route("proj/api/start", name: "api_blackjack_start", methods: ["POST"])]
+    #[Route("/proj/api/start", name: "api_blackjack_start", methods: ["POST"])]
     public function startBlackjackGameJson(SessionInterface $session): Response
     {
         $game = new BlackjackGame();
@@ -87,7 +87,7 @@ class CardGameControllerJson extends AbstractController
         return $response;
     }
 
-    #[Route("proj/api/deal", name: "api_blackjack_deal", methods: ["POST"])]
+    #[Route("/proj/api/deal", name: "api_blackjack_deal", methods: ["POST"])]
     public function dealBlackjackGameJson(SessionInterface $session): Response
     {
         /** @var \App\Blackjack\BlackjackGame|null $game */
@@ -133,7 +133,7 @@ class CardGameControllerJson extends AbstractController
         return $response;
     }
 
-    #[Route("proj/api/hit", name: "api_blackjack_hit", methods: ["POST"])]
+    #[Route("/proj/api/hit", name: "api_blackjack_hit", methods: ["POST"])]
     public function hitBlackjackGameJson(SessionInterface $session): Response
     {
         /** @var \App\Blackjack\BlackjackGame|null $game */
@@ -181,7 +181,7 @@ class CardGameControllerJson extends AbstractController
         return $response;
     }
 
-    #[Route("proj/api/stand", name: "api_blackjack_stand", methods: ["POST"])]
+    #[Route("/proj/api/stand", name: "api_blackjack_stand", methods: ["POST"])]
     public function standBlackjackGameJson(SessionInterface $session): Response
     {
         /** @var \App\Blackjack\BlackjackGame|null $game */
@@ -227,7 +227,7 @@ class CardGameControllerJson extends AbstractController
         return $response;
     }
 
-    #[Route("proj/api/end", name: "api_blackjack_end", methods: ["POST"])]
+    #[Route("/proj/api/end", name: "api_blackjack_end", methods: ["POST"])]
     public function endBlackjackGameJson(SessionInterface $session): Response
     {
         /** @var \App\Blackjack\BlackjackGame|null $game */
