@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
-class CardGameControllerJson extends AbstractController
+class BlackJackControllerJson extends AbstractController
 {
     #[Route("/proj/api/game", name: "api_blackjack_game", methods: ["POST"])]
     public function blackjackGameJson(SessionInterface $session): Response
